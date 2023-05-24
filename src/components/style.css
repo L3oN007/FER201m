@@ -1,0 +1,240 @@
+/* ! Navigation Section */
+body {
+	background-color: #f2f2f2;
+}
+/* Header */
+header {
+	width: 100%;
+	background-color: #ffffff;
+	padding: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+/* Logo */
+.logo {
+	margin-right: 20px;
+}
+
+.logo a img {
+	padding-top: 7px;
+	width: 40px; /* Adjust the width as needed */
+	height: 40px; /* Adjust the height as needed */
+}
+
+/* Navigation */
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+nav ul li {
+	margin: 0 10px;
+}
+
+nav ul li a {
+	text-decoration: none;
+	color: #333;
+	font-family: 'Helvetica Neue', Arial, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 10px;
+	border-radius: 5px;
+	transition: background-color 0.3s ease;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+	background-color: #333;
+	color: #fff;
+}
+
+/* User Profile */
+.user-profile {
+	margin-left: auto;
+}
+
+.user-profile a img {
+	width: 40px; /* Adjust the width as needed */
+	height: 40px; /* Adjust the height as needed */
+	border-radius: 10%;
+}
+
+/* !Players Section */
+.container {
+	max-width: 1200px;
+	margin: 10px auto;
+	padding: 0 20px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.column {
+	flex: 0 0 350px; /* Adjust the width as needed */
+	margin: 10px;
+}
+
+.card {
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	background-color: #fff;
+	padding: 20px;
+	transition: transform 0.3s ease; /* Added transition property */
+}
+
+.card img {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	margin-bottom: 15px;
+}
+
+h3 {
+	margin: 0;
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.title {
+	color: #777;
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+
+button {
+	padding: 8px 16px;
+	background-color: #333;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	font-size: 14px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.card:hover {
+	transform: translateY(-5px); /* Move the card up by 5 pixels */
+}
+
+button:hover {
+	background-color: #333333e8;
+}
+
+/* !Footer Section */
+.footer {
+	background-color: #000000;
+	color: #808080;
+	padding: 20px 0;
+	font-size: 14px;
+}
+
+#Footer.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.footer-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.footer-logo a {
+	font-size: 18px;
+	font-weight: bold;
+	color: #fff;
+	text-decoration: none;
+}
+
+.footer-links {
+	list-style: none;
+	display: flex;
+}
+
+.footer-links li {
+	margin-left: 20px;
+}
+
+.footer-links li a {
+	color: #ffffff;
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+.footer-links li a:hover {
+	color: #fff;
+}
+
+.footer-text {
+	font-size: 12px;
+	color: #fff;
+}
+
+/* !Popup Section */
+.popup-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 9999;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.popup-content {
+	background-color: #fff;
+	width: 90%;
+	max-width: 500px;
+	margin: 20px;
+	padding: 20px;
+	border-radius: 5px;
+	position: relative;
+}
+
+.close-popup-row {
+	display: flex;
+	justify-content: flex-end;
+	margin-bottom: 10px;
+}
+
+#closePopup button {
+	font-size: 20px;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	color: #777;
+	transition: color 0.3s ease;
+}
+
+#closePopup:hover {
+	background-color: #ee343d;
+}
+
+.player-details {
+	text-align: left;
+}
+
+.player-details img {
+	width: 100%;
+	height: auto;
+	object-fit: contain;
+	border-radius: 5px;
+	margin-top: 10px;
+}
+
+a.openPopup {
+	text-decoration: none;
+	color: inherit;
+}
