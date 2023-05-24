@@ -4,7 +4,6 @@ body {
 }
 /* Header */
 header {
-	width: 100%;
 	background-color: #ffffff;
 	padding: 20px;
 	display: flex;
@@ -14,13 +13,13 @@ header {
 
 /* Logo */
 .logo {
-	margin-right: 20px;
+	margin-right: 10px;
 }
 
 .logo a img {
-	padding-top: 7px;
-	width: 40px; /* Adjust the width as needed */
-	height: 40px; /* Adjust the height as needed */
+	padding-top: 6px;
+	width: 45px; /* Adjust the width as needed */
+	height: 45px; /* Adjust the height as needed */
 }
 
 /* Navigation */
