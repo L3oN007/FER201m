@@ -32,11 +32,13 @@ export default function FilmsPresentation({ films }) {
             ))}
 
             {selectedFilm && (
-                <div className="popup-container">
+                <div id="popupContainer" className="popup-container">
                     <div className="popup-content">
-                        <button className="close-popup" onClick={handleClosePopup}>
-                            &times;
-                        </button>
+                        <div className="close-popup-row">
+                            <button id="closePopup" onClick={handleClosePopup}>
+                                &times;
+                            </button>
+                        </div>
                         <div className="film-details-popup">
                             <div className="film-image">
                                 <img src={selectedFilm.image} alt="" />
@@ -47,11 +49,11 @@ export default function FilmsPresentation({ films }) {
                                 <p>Nation: {selectedFilm.nation}</p>
                                 <p>Director: {selectedFilm.director}</p>
                                 <p>Description: {selectedFilm.description}</p>
-
                             </div>
                         </div>
                     </div>
                 </div>
+
             )}
         </div>
     );

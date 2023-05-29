@@ -75,7 +75,7 @@ body {
 	border-radius: 8px;
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 	padding: 20px;
-	width: 100% /3;
+	width: 25%;
 	min-width: 350px;
 	margin: 10px;
 	position: relative;
@@ -237,8 +237,7 @@ body {
 .footer-text {
 	font-size: 12px;
 }
-
-/* Popup */
+/*!Popup */
 .popup-container {
 	position: fixed;
 	top: 0;
@@ -256,46 +255,68 @@ body {
 	background-color: #141414;
 	border-radius: 8px;
 	padding: 20px;
-	width: 600px;
+	width: 800px;
 	display: flex;
+	flex-direction: row;
 }
 
-.close-popup {
+.popup-content {
+	position: relative;
+}
+
+.close-popup-row {
 	position: absolute;
-	top: 10px;
-	right: 10px;
-	font-size: 24px;
-	color: #ffffff;
+	top: 0;
+	right: 0;
+	margin: 10px;
+	display: flex;
+	justify-content: flex-end;
+}
+
+#closePopup {
+	font-size: 20px;
+	background-color: transparent;
+	border: none;
 	cursor: pointer;
+	outline: none;
+	color: #777;
+	transition: color 0.3s ease;
+}
+
+#closePopup:hover {
+	color: #ee343d;
 }
 
 .film-details-popup {
 	display: flex;
 	align-items: center;
+	justify-content: flex-start;
 }
 
 .film-details-popup .film-image {
-	flex: 0 0 40%;
+	flex-shrink: 0;
+	margin-right: 20px;
 }
 
 .film-details-popup .film-image img {
-	width: 100%;
-	border-radius: 8px;
+	width: 200px;
+	height: 300px;
+	object-fit: cover;
+	border-radius: 4px;
 }
 
 .film-details-popup .film-info {
-	flex: 1;
-	padding-left: 20px;
 	color: #ffffff;
+	text-align: left;
 }
 
-.film-details-popup h2 {
-	font-size: 24px;
+.film-details-popup .film-info h2 {
+	font-size: 30px;
 	font-weight: bold;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 }
 
-.film-details-popup p {
+.film-details-popup .film-info p {
 	font-size: 16px;
 	margin-bottom: 5px;
 }
