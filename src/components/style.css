@@ -252,15 +252,12 @@ body {
 }
 
 .popup-content {
-	background-color: #141414;
+	background-color: #181818;
 	border-radius: 8px;
 	padding: 20px;
 	width: 800px;
 	display: flex;
 	flex-direction: row;
-}
-
-.popup-content {
 	position: relative;
 }
 
@@ -303,6 +300,11 @@ body {
 	height: 300px;
 	object-fit: cover;
 	border-radius: 4px;
+}
+
+.film-info .info-tag {
+	color: #777777;
+	text-align: left;
 }
 
 .film-details-popup .film-info {

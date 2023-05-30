@@ -45,10 +45,10 @@ export default function FilmsPresentation({ films }) {
                             </div>
                             <div className="film-info">
                                 <h2>{selectedFilm.name}</h2>
-                                <p>Year: {selectedFilm.year}</p>
-                                <p>Nation: {selectedFilm.nation}</p>
-                                <p>Director: {selectedFilm.director}</p>
-                                <p>Description: {selectedFilm.description}</p>
+                                <p><span className="info-tag">Year:</span>  {selectedFilm.year}</p>
+                                <p><span className="info-tag">Nation:</span> {selectedFilm.nation}</p>
+                                <p><span className="info-tag">Director:</span> {selectedFilm.director}</p>
+                                <p><span className="info-tag">Description:</span> {selectedFilm.description}</p>
                             </div>
                         </div>
                     </div>
