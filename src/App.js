@@ -1,4 +1,6 @@
-import './App.css';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import ContactPage from './components/Contact';
 import Footer from './components/Footer';
 import Main from './components/Main';
 import Navigation from './components/Navigation';
@@ -8,7 +10,10 @@ function App() {
   return (
     <div className="App">
       <Navigation />
-      <Main />
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/contact" element={<ContactPage />} />
+      </Routes>
       <Footer />
     </div>
   );
