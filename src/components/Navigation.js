@@ -7,34 +7,37 @@ export default function Navigation() {
 
     return (
         <nav className={isEnabled ? 'navbar navbar-dark' : 'navbar navbar-light'}>
-            <div className="container">
-                <Link className="navbar-logo" to="/">
+            <div className='container'>
+                <Link className='navbar-logo' to='/'>
                     Nét Phíc
                 </Link>
-                <ul className="navbar-menu">
+                <ul className='navbar-menu'>
                     <li>
-                        <Link to="/">Home</Link>
+                        <Link to='/'>Home</Link>
                     </li>
                     <li>
-                        <Link to="/contact">Contact</Link>
+                        <Link to='/contact'>Contact</Link>
                     </li>
                     <li>
-                        <Link to="/movies">Movies</Link>
+                        <Link to='/movies'>Movies</Link>
                     </li>
                     <li>
-                        <Link to="/new-releases">New Releases</Link>
+                        <Link to='/new-releases'>New Releases</Link>
                     </li>
                     <li>
-                        <Link to="/my-list">My List</Link>
+                        <Link to='/my-list'>My List</Link>
                     </li>
                 </ul>
-                <div className="navbar-profile">
-                    <button onClick={toggleState}>Toggle Theme</button>
-                    <img
-                        src="./assets/images/avatar.jpg"
-                        alt="Profile"
-                        className="navbar-profile-img"
-                    />
+                <div className='navbar-profile'>
+                    <div className='switch-toggle'>
+                        <label className='switch'>
+                            <input type='checkbox' checked={isEnabled} onChange={toggleState} />
+                            <span className='slider'></span>
+                        </label>
+                    </div>
+
+
+                    <img src='./assets/images/avatar.jpg' alt='Profile' className='navbar-profile-img' />
                 </div>
             </div>
         </nav>
