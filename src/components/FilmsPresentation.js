@@ -45,15 +45,36 @@ export default function FilmsPresentation({ films }) {
                             </div>
                             <div className="film-info">
                                 <h2>{selectedFilm.name}</h2>
-                                <p><span className="info-tag">Year:</span>  {selectedFilm.year}</p>
-                                <p><span className="info-tag">Nation:</span> {selectedFilm.nation}</p>
-                                <p><span className="info-tag">Director:</span> {selectedFilm.director}</p>
-                                <p><span className="info-tag">Description:</span> {selectedFilm.description}</p>
+                                <p>
+                                    <span className="info-tag">Year:</span> {selectedFilm.year}
+                                </p>
+                                <p>
+                                    <span className="info-tag">Nation:</span>{" "}
+                                    {selectedFilm.nation}
+                                </p>
+                                <p>
+                                    <span className="info-tag">Director:</span>{" "}
+                                    {selectedFilm.director}
+                                </p>
+                                <p>
+                                    <span className="info-tag">Description:</span>{" "}
+                                    {selectedFilm.description}
+                                </p>
+                            </div>
+                            <div className="youtube-video">
+                                <iframe
+                                    title="YouTube Video"
+                                    width="560"
+                                    height="315"
+                                    src={selectedFilm.youtubeUrl}
+                                    frameBorder="0"
+                                    allow="autoplay; encrypted-media"
+                                    allowFullScreen
+                                ></iframe>
                             </div>
                         </div>
                     </div>
                 </div>
-
             )}
         </div>
     );

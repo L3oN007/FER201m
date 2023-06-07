@@ -6,8 +6,10 @@ export const ListOfFilms = [
         nation: 'USA',
         director: 'George Lucas',
         image: './assets/images/poster1.jpg',
-        description: 'Star Wars: Episode IV - A New Hope is a science fiction film set in a galaxy far, far away. It follows the journey of Luke Skywalker as he joins forces with a group of rebels to fight against the evil Darth Vader and his empire.'
+        description: 'Star Wars: Episode IV - A New Hope is a science fiction film set in a galaxy far, far away. It follows the journey of Luke Skywalker as he joins forces with a group of rebels to fight against the evil Darth Vader and his empire.',
+        youtubeURL: 'https://www.youtube.com/watch?v=1g3_CFmnU7k'
     },
+
     {
         id: 2,
         name: 'The Godfather',

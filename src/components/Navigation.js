@@ -25,7 +25,7 @@ export default function Navigation() {
                         <Link to='/news'>News</Link>
                     </li>
                     <li>
-                        <Link to='/my-list'>My List</Link>
+                        <Link to='/test'>My List</Link>
                     </li>
                 </ul>
                 <div className='navbar-profile'>
