@@ -22,7 +22,7 @@ export default function Navigation() {
                         <Link to='/movies'>Movies</Link>
                     </li>
                     <li>
-                        <Link to='/new-releases'>New Releases</Link>
+                        <Link to='/news'>News</Link>
                     </li>
                     <li>
                         <Link to='/my-list'>My List</Link>
@@ -35,8 +35,6 @@ export default function Navigation() {
                             <span className='slider'></span>
                         </label>
                     </div>
-
-
                     <img src='./assets/images/avatar.jpg' alt='Profile' className='navbar-profile-img' />
                 </div>
             </div>

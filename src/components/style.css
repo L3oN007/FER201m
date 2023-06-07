@@ -7,6 +7,7 @@
 :root {
 	--black: #000000;
 	--white: #f9faff;
+	--beige: #f5efe7;
 	--mate_black: #141414;
 	--background: var(--black);
 	--foreground: var(--white);
@@ -73,6 +74,7 @@ body {
 	height: 50px;
 	border-radius: 10%;
 }
+
 /* ! Toggle */
 /* The switch - the box around the slider */
 .switch {
@@ -406,7 +408,7 @@ footer {
 /* ! Contact */
 
 .contact-container {
-	height: 78vh;
+	height: 79vh;
 	max-width: 1000px;
 	margin: 0 auto;
 	padding: 130px 0;
