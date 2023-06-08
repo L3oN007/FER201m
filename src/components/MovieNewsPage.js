@@ -38,17 +38,17 @@ const MovieNewsPage = () => {
             </Grid>
 
             {/* Popup */}
-            <Dialog open={selectedNews !== null} onClose={handleClosePopup} maxWidth="lg" fullWidth>
+            <Dialog open={selectedNews !== null} onClose={handleClosePopup} maxWidth="lg">
                 {selectedNews && (
-                    <DialogContent dividers sx={{ overflowY: 'auto' }}>
-                        <Typography variant="h6" component="h2" gutterBottom>
+                    <DialogContent dividers className="popup-content">
+                        <Typography className='news-popup-title' variant="h6" component="h2" gutterBottom>
                             {selectedNews.title}
                         </Typography>
                         <img src={selectedNews.image} alt={selectedNews.title} className="news-image" />
                         <Typography variant="body2" color="#808080" className="news-date" gutterBottom>
                             {selectedNews.date}
                         </Typography>
-                        <Typography variant="body1">{selectedNews.description}</Typography>
+                        <Typography className='news-popup-des' variant="body1">{selectedNews.description}</Typography>
                     </DialogContent>
                 )}
             </Dialog>
