@@ -319,6 +319,7 @@ footer {
 .footer-text {
 	font-size: 12px;
 }
+
 /*!Popup */
 .popup-container {
 	position: fixed;
@@ -385,6 +386,7 @@ footer {
 }
 
 .film-details-popup .film-info {
+	margin-top: 10px;
 	color: var(--foreground);
 	text-align: left;
 	flex: 1;
@@ -398,18 +400,25 @@ footer {
 
 .film-details-popup .film-info p {
 	font-size: 16px;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
+	line-height: 1.5;
+}
+
+.film-details-popup .film-info .info-tag {
+	color: #808080;
 }
 
 .youtube-video {
 	margin-top: 20px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	width: 100%;
+	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .youtube-video iframe {
-	max-width: 100%;
+	width: 100%;
+	height: 450px;
 	border-radius: 4px;
 }
 
@@ -534,6 +543,8 @@ footer {
 	padding: 1rem;
 	background-color: var(--cardbackground) !important;
 	color: var(--foreground) !important;
+	position: relative;
+	overflow: hidden;
 }
 
 .news-title {
@@ -550,5 +561,12 @@ footer {
 	height: 300px;
 	object-fit: cover;
 	margin-bottom: 1rem;
+}
+.news-description {
+	display: -webkit-box;
+	-webkit-line-clamp: 2; /* number of lines to show */
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 /* ! */

@@ -64,9 +64,8 @@ export default function FilmsPresentation({ films }) {
                             <div className="youtube-video">
                                 <iframe
                                     title="YouTube Video"
-                                    width="560"
-                                    height="315"
-                                    src={selectedFilm.youtubeUrl}
+
+                                    src={selectedFilm.youtubeURL}
                                     frameBorder="0"
                                     allow="autoplay; encrypted-media"
                                     allowFullScreen

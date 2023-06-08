@@ -7,7 +7,7 @@ export const ListOfFilms = [
         director: 'George Lucas',
         image: './assets/images/poster1.jpg',
         description: 'Star Wars: Episode IV - A New Hope is a science fiction film set in a galaxy far, far away. It follows the journey of Luke Skywalker as he joins forces with a group of rebels to fight against the evil Darth Vader and his empire.',
-        youtubeURL: 'https://www.youtube.com/watch?v=1g3_CFmnU7k'
+        youtubeURL: 'https://www.youtube.com/embed/vZ734NWnAHA'
     },
 
     {
@@ -17,7 +17,8 @@ export const ListOfFilms = [
         nation: 'USA',
         director: 'Francis Ford Coppola',
         image: './assets/images/poster2.jpg',
-        description: 'The Godfather is a crime film that tells the story of the Corleone crime family and their struggle to maintain their power and protect their interests. It is considered one of the greatest films of all time.'
+        description: 'The Godfather is a crime film that tells the story of the Corleone crime family and their struggle to maintain their power and protect their interests. It is considered one of the greatest films of all time.',
+        youtubeURL: 'https://www.youtube.com/embed/UaVTIH8mujA'
     },
     {
         id: 3,
@@ -26,7 +27,8 @@ export const ListOfFilms = [
         nation: 'USA',
         director: 'Frank Darabont',
         image: './assets/images/poster3.jpg',
-        description: 'The Shawshank Redemption is a drama film based on the Stephen King novella. It depicts the life of Andy Dufresne, a banker who is sentenced to life in Shawshank State Penitentiary and his friendship with a fellow inmate named Red.'
+        description: 'The Shawshank Redemption is a drama film based on the Stephen King novella. It depicts the life of Andy Dufresne, a banker who is sentenced to life in Shawshank State Penitentiary and his friendship with a fellow inmate named Red.',
+        youtubeURL: 'https://www.youtube.com/embed/6hB3S9bIaco'
     },
     {
         id: 4,
@@ -35,7 +37,8 @@ export const ListOfFilms = [
         nation: 'Viet Nam',
         director: 'Victor Vu',
         image: './assets/images/poster4.jpg',
-        description: 'Dreamy Eyes is a Vietnamese romantic drama film that explores the complexities of love and relationships. It follows the journey of two individuals as they navigate their feelings and overcome obstacles to be together.'
+        description: 'Dreamy Eyes is a Vietnamese romantic drama film that explores the complexities of love and relationships. It follows the journey of two individuals as they navigate their feelings and overcome obstacles to be together.',
+        youtubeURL: 'https://www.youtube.com/embed/KSFS0OfIK2c'
     },
     {
         id: 5,
@@ -44,7 +47,8 @@ export const ListOfFilms = [
         nation: 'USA',
         director: 'Christopher Nolan',
         image: './assets/images/poster5.jpg',
-        description: 'The Dark Knight is a superhero film based on the DC Comics character Batman. It showcases Batman\'s efforts to protect Gotham City from the chaos unleashed by the Joker, a notorious supervillain.'
+        description: 'The Dark Knight is a superhero film based on the DC Comics character Batman. It showcases Batman\'s efforts to protect Gotham City from the chaos unleashed by the Joker, a notorious supervillain.',
+        youtubeURL: 'https://www.youtube.com/embed/EXeTwQWrcwY'
     },
     {
         id: 6,
@@ -53,7 +57,8 @@ export const ListOfFilms = [
         nation: 'USA',
         director: 'Anthony Russo, Joe Russo',
         image: './assets/images/poster6.jpg',
-        description: 'End Game is a superhero film and the epic conclusion to the Marvel Cinematic Universe\'s Infinity Saga. It brings together a wide array of Marvel superheroes as they strive to undo the damage caused by the villain Thanos.'
+        description: 'End Game is a superhero film and the epic conclusion to the Marvel Cinematic Universe\'s Infinity Saga. It brings together a wide array of Marvel superheroes as they strive to undo the damage caused by the villain Thanos.',
+        youtubeURL: 'https://www.youtube.com/embed/TcMBFSGVi1c'
     },
     {
         id: 7,
@@ -62,7 +67,8 @@ export const ListOfFilms = [
         nation: 'USA',
         director: 'F. Gary Gray',
         image: './assets/images/poster7.jpg',
-        description: 'Fast & Furious 8 is an action film and the eighth installment in the Fast & Furious franchise. It follows Dominic Toretto and his team as they face off against a high-tech terrorist and his plans for world domination.'
+        description: 'Fast & Furious 8 is an action film and the eighth installment in the Fast & Furious franchise. It follows Dominic Toretto and his team as they face off against a high-tech terrorist and his plans for world domination.',
+        youtubeURL: 'https://www.youtube.com/embed/uisBaTkQAEs'
     },
     {
         id:
@@ -73,7 +79,8 @@ export const ListOfFilms = [
         nation: 'Japan',
         director: 'Haruo Sotozaki',
         image: './assets/images/poster8.jpg',
-        description: 'Demon Slayer is a Japanese animated film based on the manga series. It follows the story of a young boy named Tanjiro Kamado who becomes a demon slayer after his family is slaughtered, and he embarks on a quest for revenge.'
+        description: 'Demon Slayer is a Japanese animated film based on the manga series. It follows the story of a young boy named Tanjiro Kamado who becomes a demon slayer after his family is slaughtered, and he embarks on a quest for revenge.',
+        youtubeURL: 'https://www.youtube.com/embed/ATJYac_dORw'
     },
     {
         id: 9,
@@ -82,7 +89,8 @@ export const ListOfFilms = [
         nation: 'USA',
         director: 'Christopher Nolan',
         image: './assets/images/poster9.jpg',
-        description: 'Inception is a science fiction film directed by Christopher Nolan. It explores the concept of shared dreaming and follows a skilled thief who is tasked with planting an idea into the mind of a CEO through dream infiltration.'
+        description: 'Inception is a science fiction film directed by Christopher Nolan. It explores the concept of shared dreaming and follows a skilled thief who is tasked with planting an idea into the mind of a CEO through dream infiltration.',
+        youtubeURL: 'https://www.youtube.com/embed/YoHD9XEInc0'
     },
     {
         id: 10,
@@ -91,6 +99,7 @@ export const ListOfFilms = [
         nation: 'USA',
         director: 'Peter Jackson',
         image: './assets/images/poster10.jpg',
-        description: 'The Lord of the Rings: The Return of the King is a fantasy adventure film and the final installment in The Lord of the Rings trilogy. It depicts the climactic battle for Middle-earth as the forces of good confront the dark lord Sauron.'
+        description: 'The Lord of the Rings: The Return of the King is a fantasy adventure film and the final installment in The Lord of the Rings trilogy. It depicts the climactic battle for Middle-earth as the forces of good confront the dark lord Sauron.',
+        youtubeURL: 'https://www.youtube.com/embed/r5X-hFf6Bwo'
     }
 ];
