@@ -19,9 +19,6 @@ export default function Navigation() {
                         <Link to='/contact'>Contact</Link>
                     </li>
                     <li>
-                        <Link to='/movies'>Movies</Link>
-                    </li>
-                    <li>
                         <Link to='/news'>News</Link>
                     </li>
                     <li>
