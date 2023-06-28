@@ -6,6 +6,7 @@ export default function Navigation() {
     const { isEnabled, toggleState } = useContext(ThemeContext);
     const [isOpen, setIsOpen] = useState(false);
 
+
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
     };
