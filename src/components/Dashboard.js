@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react';
 const Dashboard = () => {
     const [films, setFilms] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [selectedFilm, setSelectedFilm] = useState(null);
     const [filmData, setFilmData] = useState({
         name: '',
         year: '',
@@ -13,7 +12,6 @@ const Dashboard = () => {
         image: '',
         description: '',
         youtubeURL: '',
-        id: '',
     });
 
     useEffect(() => {
@@ -38,7 +36,6 @@ const Dashboard = () => {
     };
 
     const handleEdit = (film) => {
-        setSelectedFilm(film);
         setFilmData(film);
         setIsModalOpen(true);
     };
@@ -51,8 +48,8 @@ const Dashboard = () => {
     const handleUpdate = () => {
         // Make API call to update film data with filmData state
         // Replace the API endpoint and method as per your requirements
-        fetch(`https://648867740e2469c038fda6cc.mockapi.io/Films/${selectedFilm.id}`, {
-            method: 'PUT',
+        fetch('https://648867740e2469c038fda6cc.mockapi.io/Films', {
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -60,17 +57,23 @@ const Dashboard = () => {
         })
             .then(response => {
                 if (response.ok) {
-                    // Update the film in the films state with the updated filmData
-                    setFilms(prevFilms => prevFilms.map(film => {
-                        if (film.id === selectedFilm.id) {
-                            return { ...film, ...filmData };
-                        }
-                        return film;
-                    }));
-                    setIsModalOpen(false);
+                    return response.json();
                 } else {
-                    console.error('Failed to update the film');
+                    console.error('Failed to add the film');
                 }
+            })
+            .then(data => {
+                setFilms(prevFilms => [...prevFilms, data]);
+                setIsModalOpen(false);
+                setFilmData({
+                    name: '',
+                    year: '',
+                    nation: '',
+                    director: '',
+                    image: '',
+                    description: '',
+                    youtubeURL: '',
+                });
             })
             .catch(error => console.error(error));
     };
@@ -78,6 +81,9 @@ const Dashboard = () => {
     return (
         <>
             <h1 className='dashboard-title'>Films Dashboard</h1>
+            <Button variant="contained" onClick={() => setIsModalOpen(true)}>
+                <i class="fa-solid fa-plus"></i> Add Film
+            </Button>
             <table className="movie-table">
                 <tbody>
                     <tr>
@@ -132,7 +138,7 @@ const Dashboard = () => {
                     }}
                 >
                     <Typography variant="h6" component="h2">
-                        Edit Film
+                        Add Film
                     </Typography>
                     <TextField
                         label="Name"
@@ -191,7 +197,7 @@ const Dashboard = () => {
                         margin="normal"
                     />
                     <Button onClick={handleUpdate} variant="contained">
-                        Update
+                        Add
                     </Button>
                 </Box>
             </Modal>
