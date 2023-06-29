@@ -18,7 +18,7 @@ html,
 body {
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	background-color: var(--background);
-	color: var(--foreground);
+	/* color: var(--foreground); */
 	height: 100%;
 	margin: 0;
 }
@@ -567,6 +567,15 @@ footer {
 	background-color: #b2070a;
 }
 
+.error-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.error-message {
+	color: red;
+	font-size: 14px;
+}
 @media screen and (max-width: 768px) {
 	.container {
 		flex-direction: column;
@@ -659,14 +668,14 @@ footer {
 /* !Dashboard */
 h1.dashboard-title {
 	text-align: center;
-	color: #333333;
+	color: #b2070a;
 }
 table.movie-table {
 	border-radius: 5px;
 	width: 80%;
 	margin: 0 auto;
 	border-collapse: collapse;
-	background-color: #ffffff;
+	background-color: var(--cardbackground);
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 	margin-bottom: 10px;
 }
@@ -676,6 +685,7 @@ td {
 	padding: 12px 15px;
 	text-align: left;
 	border-bottom: 1px solid #dddddd;
+	color: var(--foreground);
 }
 
 th {
@@ -740,4 +750,10 @@ td:nth-child(7) {
 }
 button.btn-soft-danger {
 	margin-left: 5px !important;
+}
+
+Button.add-film {
+	position: fixed;
+	top: 6.5rem;
+	right: 0.5rem;
 }

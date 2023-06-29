@@ -155,7 +155,7 @@ const Dashboard = () => {
     return (
         <>
             <h1 className="dashboard-title">Films Dashboard</h1>
-            <Button variant="contained" onClick={handleAddModalOpen}>
+            <Button className='btn btn-group-lg btn-pills btn-soft-warning add-film' variant="contained" onClick={handleAddModalOpen}>
                 <i className="fa-solid fa-plus"></i> Add Film
             </Button>
             <table className="movie-table">
