@@ -476,10 +476,10 @@ footer {
 /* ! Contact */
 
 .contact-container {
-	height: 79vh;
+	height: 88vh;
 	max-width: 1000px;
 	margin: 0 auto;
-	padding: 130px 0;
+	padding: 100px 0;
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
@@ -745,7 +745,7 @@ td:nth-child(6) {
 
 th:nth-child(7),
 td:nth-child(7) {
-	width: 7%;
+	width: 8.5%;
 	text-align: center;
 }
 button.btn-soft-danger {
@@ -755,5 +755,5 @@ button.btn-soft-danger {
 Button.add-film {
 	position: fixed;
 	top: 6.5rem;
-	right: 0.5rem;
+	right: 1rem;
 }
