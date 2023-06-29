@@ -4,7 +4,17 @@ import React, { useEffect, useState } from 'react';
 const Dashboard = () => {
     const [films, setFilms] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [filmData, setFilmData] = useState({
+    const [isUpdateModal, setIsUpdateModal] = useState(false);
+    const [updateFilmData, setUpdateFilmData] = useState({
+        name: '',
+        year: '',
+        nation: '',
+        director: '',
+        image: '',
+        description: '',
+        youtubeURL: '',
+    });
+    const [addFilmData, setAddFilmData] = useState({
         name: '',
         year: '',
         nation: '',
@@ -23,7 +33,7 @@ const Dashboard = () => {
 
     const handleDelete = (id) => {
         fetch(`https://648867740e2469c038fda6cc.mockapi.io/Films/${id}`, {
-            method: 'DELETE'
+            method: 'DELETE',
         })
             .then(response => {
                 if (response.ok) {
@@ -36,36 +46,53 @@ const Dashboard = () => {
     };
 
     const handleEdit = (film) => {
-        setFilmData(film);
+        setUpdateFilmData(film);
         setIsModalOpen(true);
+        setIsUpdateModal(true);
     };
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
-        setFilmData(prevData => ({ ...prevData, [name]: value }));
+        if (isUpdateModal) {
+            setUpdateFilmData(prevData => ({ ...prevData, [name]: value }));
+        } else {
+            setAddFilmData(prevData => ({ ...prevData, [name]: value }));
+        }
     };
 
     const handleUpdate = () => {
-        // Make API call to update film data with filmData state
+        // Make API call to update film data with updateFilmData state
         // Replace the API endpoint and method as per your requirements
-        fetch('https://648867740e2469c038fda6cc.mockapi.io/Films', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(filmData),
-        })
+        fetch(
+            `https://648867740e2469c038fda6cc.mockapi.io/Films/${updateFilmData.id}`,
+            {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(updateFilmData),
+            }
+        )
             .then(response => {
                 if (response.ok) {
                     return response.json();
                 } else {
-                    console.error('Failed to add the film');
+                    console.error('Failed to update the film');
                 }
             })
             .then(data => {
-                setFilms(prevFilms => [...prevFilms, data]);
+                setFilms(prevFilms => {
+                    const updatedFilms = prevFilms.map(film => {
+                        if (film.id === data.id) {
+                            return data;
+                        }
+                        return film;
+                    });
+                    return updatedFilms;
+                });
                 setIsModalOpen(false);
-                setFilmData({
+                setIsUpdateModal(false);
+                setUpdateFilmData({
                     name: '',
                     year: '',
                     nation: '',
@@ -78,11 +105,58 @@ const Dashboard = () => {
             .catch(error => console.error(error));
     };
 
+    const handleAdd = () => {
+        // Make API call to add film data with addFilmData state
+        // Replace the API endpoint and method as per your requirements
+        fetch('https://648867740e2469c038fda6cc.mockapi.io/Films', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(addFilmData),
+        })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    console.error('Failed to add the film');
+                }
+            })
+            .then(data => {
+                setFilms(prevFilms => [...prevFilms, data]);
+                setIsModalOpen(false);
+                setAddFilmData({
+                    name: '',
+                    year: '',
+                    nation: '',
+                    director: '',
+                    image: '',
+                    description: '',
+                    youtubeURL: '',
+                });
+            })
+            .catch(error => console.error(error));
+    };
+
+    const handleAddModalOpen = () => {
+        setIsModalOpen(true);
+        setIsUpdateModal(false);
+        setUpdateFilmData({
+            name: '',
+            year: '',
+            nation: '',
+            director: '',
+            image: '',
+            description: '',
+            youtubeURL: '',
+        });
+    };
+
     return (
         <>
-            <h1 className='dashboard-title'>Films Dashboard</h1>
-            <Button variant="contained" onClick={() => setIsModalOpen(true)}>
-                <i class="fa-solid fa-plus"></i> Add Film
+            <h1 className="dashboard-title">Films Dashboard</h1>
+            <Button variant="contained" onClick={handleAddModalOpen}>
+                <i className="fa-solid fa-plus"></i> Add Film
             </Button>
             <table className="movie-table">
                 <tbody>
@@ -137,72 +211,147 @@ const Dashboard = () => {
                         p: 4,
                     }}
                 >
-                    <Typography variant="h6" component="h2">
-                        Add Film
-                    </Typography>
-                    <TextField
-                        label="Name"
-                        name="name"
-                        value={filmData.name}
-                        onChange={handleInputChange}
-                        fullWidth
-                        margin="normal"
-                    />
-                    <TextField
-                        label="Year"
-                        name="year"
-                        value={filmData.year}
-                        onChange={handleInputChange}
-                        fullWidth
-                        margin="normal"
-                    />
-                    <TextField
-                        label="Nation"
-                        name="nation"
-                        value={filmData.nation}
-                        onChange={handleInputChange}
-                        fullWidth
-                        margin="normal"
-                    />
-                    <TextField
-                        label="Director"
-                        name="director"
-                        value={filmData.director}
-                        onChange={handleInputChange}
-                        fullWidth
-                        margin="normal"
-                    />
-                    <TextField
-                        label="Image"
-                        name="image"
-                        value={filmData.image}
-                        onChange={handleInputChange}
-                        fullWidth
-                        margin="normal"
-                    />
-                    <TextField
-                        label="Description"
-                        name="description"
-                        value={filmData.description}
-                        onChange={handleInputChange}
-                        fullWidth
-                        margin="normal"
-                    />
-                    <TextField
-                        label="YouTube URL"
-                        name="youtubeURL"
-                        value={filmData.youtubeURL}
-                        onChange={handleInputChange}
-                        fullWidth
-                        margin="normal"
-                    />
-                    <Button onClick={handleUpdate} variant="contained">
-                        Add
-                    </Button>
+                    {isUpdateModal ? (
+                        // Update film popup
+                        <>
+                            <Typography variant="h6" component="h2">
+                                Update Film
+                            </Typography>
+                            <TextField
+                                label="Name"
+                                name="name"
+                                value={updateFilmData.name}
+                                onChange={handleInputChange}
+                                fullWidth
+                                margin="normal"
+                            />
+                            <TextField
+                                label="Year"
+                                name="year"
+                                value={updateFilmData.year}
+                                onChange={handleInputChange}
+                                fullWidth
+                                margin="normal"
+                            />
+                            <TextField
+                                label="Nation"
+                                name="nation"
+                                value={updateFilmData.nation}
+                                onChange={handleInputChange}
+                                fullWidth
+                                margin="normal"
+                            />
+                            <TextField
+                                label="Director"
+                                name="director"
+                                value={updateFilmData.director}
+                                onChange={handleInputChange}
+                                fullWidth
+                                margin="normal"
+                            />
+                            <TextField
+                                label="Image URL"
+                                name="image"
+                                value={updateFilmData.image}
+                                onChange={handleInputChange}
+                                fullWidth
+                                margin="normal"
+                            />
+                            <TextField
+                                label="Description"
+                                name="description"
+                                value={updateFilmData.description}
+                                onChange={handleInputChange}
+                                fullWidth
+                                multiline
+                                rows={4}
+                                margin="normal"
+                            />
+                            <TextField
+                                label="YouTube URL"
+                                name="youtubeURL"
+                                value={updateFilmData.youtubeURL}
+                                onChange={handleInputChange}
+                                fullWidth
+                                margin="normal"
+                            />
+                            <Button variant="contained" onClick={handleUpdate}>
+                                Update
+                            </Button>
+                        </>
+                    ) : (
+                        // Add film popup
+                        <>
+                            <Typography variant="h6" component="h2">
+                                Add Film
+                            </Typography>
+                            <TextField
+                                label="Name"
+                                name="name"
+                                value={addFilmData.name}
+                                onChange={handleInputChange}
+                                fullWidth
+                                margin="normal"
+                            />
+                            <TextField
+                                label="Year"
+                                name="year"
+                                value={addFilmData.year}
+                                onChange={handleInputChange}
+                                fullWidth
+                                margin="normal"
+                            />
+                            <TextField
+                                label="Nation"
+                                name="nation"
+                                value={addFilmData.nation}
+                                onChange={handleInputChange}
+                                fullWidth
+                                margin="normal"
+                            />
+                            <TextField
+                                label="Director"
+                                name="director"
+                                value={addFilmData.director}
+                                onChange={handleInputChange}
+                                fullWidth
+                                margin="normal"
+                            />
+                            <TextField
+                                label="Image URL"
+                                name="image"
+                                value={addFilmData.image}
+                                onChange={handleInputChange}
+                                fullWidth
+                                margin="normal"
+                            />
+                            <TextField
+                                label="Description"
+                                name="description"
+                                value={addFilmData.description}
+                                onChange={handleInputChange}
+                                fullWidth
+                                multiline
+                                rows={4}
+                                margin="normal"
+                            />
+                            <TextField
+                                label="YouTube URL"
+                                name="youtubeURL"
+                                value={addFilmData.youtubeURL}
+                                onChange={handleInputChange}
+                                fullWidth
+                                margin="normal"
+                            />
+                            <Button variant="contained" onClick={handleAdd}>
+                                Add
+                            </Button>
+                        </>
+                    )}
                 </Box>
             </Modal>
         </>
     );
-}
+};
 
 export default Dashboard;

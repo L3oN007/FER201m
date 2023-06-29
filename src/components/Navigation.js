@@ -56,11 +56,7 @@ export default function Navigation() {
                                         <i class="fa-solid fa-gauge"></i>Dashboard
                                     </Link>
                                 </li>
-                                <li>
-                                    <Link to='/user-setting' className="dropdown-option" onClick={() => handleOptionClick('Settings')}>
-                                        <i class="fa-solid fa-gear"></i>Settings
-                                    </Link>
-                                </li>
+
                                 <li>
                                     <a href='#' className="dropdown-option" onClick={() => handleOptionClick('Logout')}>
                                         <i class="fa-solid fa-right-from-bracket"></i>Logout
