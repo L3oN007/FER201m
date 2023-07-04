@@ -1,0 +1,27 @@
+.select2-results__option img {
+	width: 50px; /* Adjust the width as desired */
+	height: 50px; /* Adjust the height as desired */
+	margin-right: 10px;
+}
+
+.selected-image {
+	display: flex;
+	align-items: center;
+}
+
+.selected-image img {
+	width: 30px;
+	height: 30px;
+	margin-right: 10px;
+}
+
+.select2-container .select2-selection--single {
+	height: auto;
+	padding: 7px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+	height: 40px; /* Adjust the height of the arrow */
+	top: 50%;
+	transform: translateY(-50%);
+}
