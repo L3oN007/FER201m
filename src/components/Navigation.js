@@ -1,18 +1,19 @@
 import jwt_decode from "jwt-decode";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "../assets/css/bootstrap.min.css";
 import "../assets/css/style.css";
 
 export default function Navigation() {
     const [user, setUser] = useState({});
-    const [isSignedIn, setIsSignedIn] = useState(false);
+    const [showSignInDiv, setShowSignInDiv] = useState(true);
+
 
     function handleCredentialResponse(response) {
         console.log("Encoded JWT ID token: " + response.credential);
         var userObject = jwt_decode(response.credential);
         console.log(userObject);
         setUser(userObject);
-        setIsSignedIn(true);
 
         // Set expiration time to 1 week (7 days)
         const expirationTime = new Date().getTime() + 7 * 24 * 60 * 60 * 1000;
@@ -22,8 +23,9 @@ export default function Navigation() {
 
     function handleSignOut() {
         setUser({});
-        setIsSignedIn(false);
+        setShowSignInDiv(true);
         localStorage.removeItem("loginData");
+        window.location.reload();
     }
 
     useEffect(() => {
@@ -48,13 +50,17 @@ export default function Navigation() {
             // Check if login has expired
             if (loginData.expiresAt > new Date().getTime()) {
                 setUser(loginData.user);
-                setIsSignedIn(true);
+                setShowSignInDiv(false);
             } else {
                 // Remove expired login data
                 localStorage.removeItem("loginData");
+                setShowSignInDiv(true);
             }
         }
+
     }, []);
+
+
 
     return (
         <header className="header">
@@ -143,7 +149,7 @@ export default function Navigation() {
                         {/* <a class="nav-link header-login" href="login.html">login / Signup </a> */}
                     </li>
                     {/* User Menu */}
-                    {isSignedIn && Object.keys(user).length > 0 ? (
+                    {Object.keys(user).length > 0 ? (
                         <li className="nav-item dropdown has-arrow logged-item">
                             <a href="#" className="dropdown-toggle nav-link" data-toggle="dropdown">
                                 <span className="user-img">
@@ -170,9 +176,9 @@ export default function Navigation() {
                                         {/* <p className="text-muted mb-0">Patient</p> */}
                                     </div>
                                 </div>
-                                <a className="dropdown-item" href="patient-dashboard.html">
+                                <Link className="dropdown-item" to='/dashboard'>
                                     <i class="fa-solid fa-gauge dropdown-menu-icon"></i>Dashboard
-                                </a>
+                                </Link>
                                 <a className="dropdown-item" href="profile-settings.html">
                                     <i class="fa-solid fa-user dropdown-menu-icon"></i>Profile Settings
                                 </a>
@@ -181,14 +187,14 @@ export default function Navigation() {
                                 </button>
                             </div>
                         </li>
-                    ) : (
+                    ) : showSignInDiv ? (
                         <li className="nav-item">
                             <div id="signInDiv"></div>
                         </li>
-                    )}
+                    ) : null}
                 </ul>
             </nav>
-            <div id="signInDiv"></div>
+
         </header>
 
 
