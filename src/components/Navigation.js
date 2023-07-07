@@ -1,6 +1,6 @@
 import jwt_decode from "jwt-decode";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import "../assets/css/bootstrap.min.css";
 import "../assets/css/style.css";
 
@@ -9,11 +9,13 @@ export default function Navigation() {
     const [showSignInDiv, setShowSignInDiv] = useState(true);
 
 
+
     function handleCredentialResponse(response) {
         console.log("Encoded JWT ID token: " + response.credential);
         var userObject = jwt_decode(response.credential);
         console.log(userObject);
         setUser(userObject);
+
 
         // Set expiration time to 1 week (7 days)
         const expirationTime = new Date().getTime() + 7 * 24 * 60 * 60 * 1000;
@@ -25,6 +27,7 @@ export default function Navigation() {
         setUser({});
         setShowSignInDiv(true);
         localStorage.removeItem("loginData");
+        <Navigate to="/" />;
         window.location.reload();
     }
 
@@ -73,9 +76,9 @@ export default function Navigation() {
                             <span />
                         </span>
                     </a>
-                    <a href="index.html" className="navbar-brand logo">
+                    <Link to='/' className="navbar-brand logo">
                         <img src="../assets/img/logo2.png" className="img-fluid" alt="Logo" />
-                    </a>
+                    </Link>
                 </div>
                 <div className="main-menu-wrapper">
                     <div className="menu-header">
@@ -88,7 +91,7 @@ export default function Navigation() {
                     </div>
                     <ul className="main-nav">
                         <li className="active">
-                            <a href="index.html">Home</a>
+                            <Link to='/'>Home</Link>
                         </li>
                         <li className="has-submenu">
                             <a href="#">

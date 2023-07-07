@@ -1,9 +1,9 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import Dashboard from './components/Dashboard';
 import Footer from './components/Footer';
 import Index from './components/Index';
 import Navigation from './components/Navigation';
 import PrivateRoutes from './components/PrivateRoute';
+import CustomerDashboard from './components/customer/CustomerDashboard';
 
 function App() {
   return (
@@ -11,10 +11,10 @@ function App() {
       <Router>
         <Navigation />
         <Routes>
-          <Route element={<PrivateRoutes />}>
-            <Route element={<Dashboard />} path='/dashboard' exact />
-          </Route>
           <Route element={<Index />} path='/' />
+          <Route element={<PrivateRoutes />}>
+            <Route element={<CustomerDashboard />} path='/dashboard' />
+          </Route>
         </Routes>
       </Router>
       <Footer />
