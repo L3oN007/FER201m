@@ -5,7 +5,7 @@ const PrivateRoutes = () => {
     // Check if the user is authenticated
     const isAuthenticated = localStorage.getItem('loginData') !== null;
 
-    return isAuthenticated ? <Outlet /> : <Navigate to="/" />;
+    return isAuthenticated ? <Outlet /> : <Navigate to="/error" replace />;
 };
 
 export default PrivateRoutes;

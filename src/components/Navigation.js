@@ -179,12 +179,12 @@ export default function Navigation() {
                                         {/* <p className="text-muted mb-0">Patient</p> */}
                                     </div>
                                 </div>
-                                <Link className="dropdown-item" to='/dashboard'>
+                                <Link className="dropdown-item" to='/customer-dashboard'>
                                     <i class="fa-solid fa-gauge dropdown-menu-icon"></i>Dashboard
                                 </Link>
-                                <a className="dropdown-item" href="profile-settings.html">
+                                <Link className="dropdown-item" to='/customer-profile-setting'>
                                     <i class="fa-solid fa-user dropdown-menu-icon"></i>Profile Settings
-                                </a>
+                                </Link>
                                 <button className="dropdown-item" onClick={handleSignOut} >
                                     <i class="fa-solid fa-right-from-bracket dropdown-menu-icon"></i>Logout
                                 </button>
