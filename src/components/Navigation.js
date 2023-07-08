@@ -145,51 +145,54 @@ export default function Navigation() {
                             <p className="contact-info-header">+1 315 369 5943</p>
                         </div>
                     </li>
-                    <li className="nav-item">
-                        <a href="booking-list.html" className="btn btn-lg btn-primary px-4">
-                            Book Now
-                        </a>
-                        {/* <a class="nav-link header-login" href="login.html">login / Signup </a> */}
-                    </li>
+
                     {/* User Menu */}
                     {Object.keys(user).length > 0 ? (
-                        <li className="nav-item dropdown has-arrow logged-item">
-                            <a href="#" className="dropdown-toggle nav-link" data-toggle="dropdown">
-                                <span className="user-img">
-                                    <img
-                                        className="rounded-circle"
-                                        src={user.picture}
-                                        width={31}
-                                        alt="Ryan Taylor"
-                                    />
-                                </span>
-                            </a>
-                            <div className="dropdown-menu dropdown-menu-right">
-                                <div className="user-header">
-                                    <div className="avatar avatar-sm">
+                        <>
+                            <li className="nav-item">
+                                <Link to='/booking-list' className="btn btn-lg btn-primary px-4">
+                                    Book Now
+                                </Link>
+                            </li>
+                            <li className="nav-item dropdown has-arrow logged-item">
+                                <a href="#" className="dropdown-toggle nav-link" data-toggle="dropdown">
+                                    <span className="user-img">
                                         <img
+                                            className="rounded-circle"
                                             src={user.picture}
-                                            alt="User Image"
-                                            className="avatar-img rounded-circle"
+                                            width={31}
+                                            alt="Ryan Taylor"
                                         />
+                                    </span>
+                                </a>
+                                <div className="dropdown-menu dropdown-menu-right">
+                                    <div className="user-header">
+                                        <div className="avatar avatar-sm">
+                                            <img
+                                                src={user.picture}
+                                                alt="User Image"
+                                                className="avatar-img rounded-circle"
+                                            />
+                                        </div>
+                                        <div className="user-text">
+                                            <h6>{user.name}</h6>
+                                            <span className="badge badge-soft-success">Customer</span>
+                                            {/* <p className="text-muted mb-0">Patient</p> */}
+                                        </div>
                                     </div>
-                                    <div className="user-text">
-                                        <h6>{user.name}</h6>
-                                        <span className="badge badge-soft-success">Customer</span>
-                                        {/* <p className="text-muted mb-0">Patient</p> */}
-                                    </div>
+                                    <Link className="dropdown-item" to='/customer-dashboard'>
+                                        <i class="fa-solid fa-gauge dropdown-menu-icon"></i>Dashboard
+                                    </Link>
+                                    <Link className="dropdown-item" to='/customer-profile-setting'>
+                                        <i class="fa-solid fa-user dropdown-menu-icon"></i>Profile Settings
+                                    </Link>
+                                    <button className="dropdown-item" onClick={handleSignOut} >
+                                        <i class="fa-solid fa-right-from-bracket dropdown-menu-icon"></i>Logout
+                                    </button>
                                 </div>
-                                <Link className="dropdown-item" to='/customer-dashboard'>
-                                    <i class="fa-solid fa-gauge dropdown-menu-icon"></i>Dashboard
-                                </Link>
-                                <Link className="dropdown-item" to='/customer-profile-setting'>
-                                    <i class="fa-solid fa-user dropdown-menu-icon"></i>Profile Settings
-                                </Link>
-                                <button className="dropdown-item" onClick={handleSignOut} >
-                                    <i class="fa-solid fa-right-from-bracket dropdown-menu-icon"></i>Logout
-                                </button>
-                            </div>
-                        </li>
+                            </li>
+                        </>
+
                     ) : showSignInDiv ? (
                         <li className="nav-item">
                             <div id="signInDiv"></div>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 export default function CustomerDashboard() {
     const [user, setUser] = useState({});
 
@@ -86,16 +87,10 @@ export default function CustomerDashboard() {
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="profile-settings.html">
+                                                <Link to='/customer-profile-setting'>
                                                     <i className="fas fa-user-cog" />
                                                     <span>Profile Settings</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="change-password.html">
-                                                    <i className="fas fa-lock" />
-                                                    <span>Change Password</span>
-                                                </a>
+                                                </Link>
                                             </li>
                                             <li>
                                                 <a href="index.html">
