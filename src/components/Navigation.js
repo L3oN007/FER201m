@@ -1,8 +1,7 @@
 import jwt_decode from "jwt-decode";
 import React, { useEffect, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
-import "../assets/css/bootstrap.min.css";
-import "../assets/css/style.css";
+
 
 export default function Navigation() {
     const [user, setUser] = useState({});
@@ -180,7 +179,7 @@ export default function Navigation() {
                                             {/* <p className="text-muted mb-0">Patient</p> */}
                                         </div>
                                     </div>
-                                    <Link className="dropdown-item" to='/customer-dashboard'>
+                                    <Link className="dropdown-item" to='/customer'>
                                         <i class="fa-solid fa-gauge dropdown-menu-icon"></i>Dashboard
                                     </Link>
                                     <Link className="dropdown-item" to='/customer-profile-setting'>

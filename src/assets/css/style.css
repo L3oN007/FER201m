@@ -53,14 +53,7 @@ Version      : 1.0
 -----------------------*/
 
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,900');
-@font-face {
-	font-family: 'Material Icons';
-	font-style: normal;
-	font-weight: 400;
-	src: url(../fonts/MaterialIcons-Regular.eot); /* For IE6-8 */
-	src: local('Material Icons'), local('MaterialIcons-Regular'), url(../fonts/MaterialIcons-Regular.html) format('woff2'),
-		url(../fonts/MaterialIcons-Regular.woff) format('woff'), url(../fonts/MaterialIcons-Regular.ttf) format('truetype');
-}
+
 .material-icons {
 	font-family: 'Material Icons';
 	font-weight: normal;
@@ -945,7 +938,7 @@ button.bg-danger:hover {
 .form-group {
 	margin-bottom: 1.25rem;
 }
-.form-group label{
+.form-group label {
 	font-weight: bold;
 }
 /*-----------------
@@ -2066,7 +2059,7 @@ html.menu-opened body {
 .footer .footer-widget .footer-logo {
 	margin-bottom: 30px;
 }
-.footer .footer-widget .footer-logo img{
+.footer .footer-widget .footer-logo img {
 	height: 80px;
 }
 .footer .footer-widget .footer-about-content p {
@@ -2288,7 +2281,7 @@ html.menu-opened body {
 -----------------------*/
 
 .section-search {
-	background: #f9f9f9 url(../img/search-bg.png) no-repeat bottom center;
+	/* background: #f9f9f9 url(../img/search-bg.png) no-repeat bottom center; */
 	min-height: 450px;
 	background-size: 100% auto;
 	position: relative;
@@ -2352,7 +2345,7 @@ html.menu-opened body {
 	width: 240px;
 }
 .search-location .form-control {
-	background: #fff url(../img/location.png) no-repeat 10px center;
+	/* background: #fff url(../img/location.png) no-repeat 10px center; */
 }
 .search-box .search-info {
 	-ms-flex: 0 0 490px;
@@ -2362,7 +2355,7 @@ html.menu-opened body {
 	width: 490px;
 }
 .search-info .form-control {
-	background: #fff url(../img/search.png) no-repeat 10px center;
+	/* background: #fff url(../img/search.png) no-repeat 10px center; */
 }
 .search-box .search-btn {
 	width: 46px;
@@ -3636,7 +3629,8 @@ html.menu-opened body {
 	padding: 5px 15px 0;
 	transition: border-color 0.3s;
 	width: 100%;
-}.card-label > select {
+}
+.card-label > select {
 	background-color: #fff;
 	border: 1px solid #dbdbdb;
 	border-radius: 4px;
@@ -6831,117 +6825,114 @@ html.menu-opened body {
 	margin-left: 0;
 }
 
-.filter{
+.filter {
 	display: flex;
 	flex-direction: column;
 }
 
-
-
-
 /* birdlist & assignbird (remove later) */
-.add-more{
-    background-color: #d95e33;
-    border: 1px solid #d95e33;
-    margin-top: 2rem;
-    padding: 1rem 2rem;
-    border-radius: 10px;
+.add-more {
+	background-color: #d95e33;
+	border: 1px solid #d95e33;
+	margin-top: 2rem;
+	padding: 1rem 2rem;
+	border-radius: 10px;
 }
-.add-more a{
-    color: white;
-    font-size: 20px;
+.add-more a {
+	color: white;
+	font-size: 20px;
 }
-.add-more a:hover{
-    color: grey;
+.add-more a:hover {
+	color: grey;
 }
-.assign-pet-container{
-    margin: 5% 10%;
+.assign-pet-container {
+	margin: 5% 10%;
 }
-.input-boxes{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.input-boxes {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 }
-.upload-box{
-    border: 2px dashed #d95e33;
-    width: 10rem;
-    height: 10rem;
-    margin-top: 2rem;
+.upload-box {
+	border: 2px dashed #d95e33;
+	width: 10rem;
+	height: 10rem;
+	margin-top: 2rem;
 }
-.fa-cloud-upload-alt{
-    margin-left: 3rem;
-    margin-top: 3.4rem;
-    font-size: 50px;
-    color: #d95e33;
+.fa-cloud-upload-alt {
+	margin-left: 3rem;
+	margin-top: 3.4rem;
+	font-size: 50px;
+	color: #d95e33;
 }
-.assign-pet-container{
-    margin-left: 26%;
+.assign-pet-container {
+	margin-left: 26%;
 }
-.input-boxes{
-    margin-top: 2rem;
+.input-boxes {
+	margin-top: 2rem;
 }
 .input-box {
-    margin-bottom: 2rem;
+	margin-bottom: 2rem;
 }
-.input-box input{
-    padding: 0.5rem 13rem 0.4rem 0.6rem;
-    width: 29rem;
+.input-box input {
+	padding: 0.5rem 13rem 0.4rem 0.6rem;
+	width: 29rem;
 }
-.input-box p{
-    margin-bottom: 0.2rem;
-    font-size: 20px;
+.input-box p {
+	margin-bottom: 0.2rem;
+	font-size: 20px;
 }
-.input-box select{
-    padding: 0.5rem 13.5rem 0.5rem 0.6rem;
+.input-box select {
+	padding: 0.5rem 13.5rem 0.5rem 0.6rem;
 }
-.input-boxes .input-box:nth-child(2) input{
-    padding: 0.5rem 1rem 0.4rem 0.6rem;
-    width: 19rem;
+.input-boxes .input-box:nth-child(2) input {
+	padding: 0.5rem 1rem 0.4rem 0.6rem;
+	width: 19rem;
 }
-.input-boxes .input-box:nth-child(6) select{
-    padding: 0.5rem 15.5rem 0.5rem 0.6rem;
+.input-boxes .input-box:nth-child(6) select {
+	padding: 0.5rem 15.5rem 0.5rem 0.6rem;
 }
-.upload-photo-box{
-    display: flex;
+.upload-photo-box {
+	display: flex;
 }
-.upload-content{
-    margin: 4.5rem 2rem;
+.upload-content {
+	margin: 4.5rem 2rem;
 }
-.upload-content button{
-    padding: 1rem 1rem;
-    border-radius: 30px;
-    background-color: #009efb;
-    color: white;
-    border: 1px solid #009efb;
-    font-size: 20px;
+.upload-content button {
+	padding: 1rem 1rem;
+	border-radius: 30px;
+	background-color: #009efb;
+	color: white;
+	border: 1px solid #009efb;
+	font-size: 20px;
 }
-.text-muted{
-    font-size: 15px;
+.text-muted {
+	font-size: 15px;
 }
-.submit{
-    margin-left: 35%;
-    padding: 1rem 2rem;
-    font-size: 25px;
-    border-radius: 20px;
-    background-color: #d95e33;
-    border: 1px solid #d95e33;
-    color: white;
+.submit {
+	margin-left: 35%;
+	padding: 1rem 2rem;
+	font-size: 25px;
+	border-radius: 20px;
+	background-color: #d95e33;
+	border: 1px solid #d95e33;
+	color: white;
 }
-.assign-pet h2{
-    color: #d95e33;
-    font-size: 40px;
+.assign-pet h2 {
+	color: #d95e33;
+	font-size: 40px;
 }
-.information{
+.information {
 	font-style: italic;
 	margin-bottom: 1rem;
 	font-size: 17px;
 }
-.header{
+.header {
 	margin-bottom: 0.2rem;
 	font-size: 20px;
 	font-weight: bold;
 	color: #d95e33;
 }
-.bird-information-box{
+.bird-information-box {
 	width: 10rem;
 	border-top: 1px solid rgba(0, 0, 0, 0.125);
 	border-right: 1px solid rgba(0, 0, 0, 0.125);
@@ -6949,7 +6940,7 @@ html.menu-opened body {
 	padding-top: 1rem;
 	width: 12rem;
 }
-.bird-information-boxes{
+.bird-information-boxes {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	width: 24.05rem;
@@ -6959,23 +6950,23 @@ html.menu-opened body {
 	border-left: 1px solid rgba(0, 0, 0, 0.125);
 	border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
-.bird-avatar{
+.bird-avatar {
 	width: 120px;
 	height: 120px;
 	border-radius: 50%;
 	border: 3px solid grey;
 }
-.avatar-image{
+.avatar-image {
 	display: flex;
 	margin-bottom: 2rem;
 	margin-left: 2rem;
 }
-.avatar-image h2{
+.avatar-image h2 {
 	margin-left: 2rem;
 	margin-top: 2.6rem;
 	color: #17a2b8;
 }
-.bird-general-info{
+.bird-general-info {
 	margin-left: 1rem;
 	border: 1px solid rgba(0, 0, 0, 0.125);
 	width: 25rem;
@@ -6985,22 +6976,22 @@ html.menu-opened body {
 	display: block;
 	height: 30rem;
 }
-.bird-detail-page-container{
+.bird-detail-page-container {
 	background-color: #f8f9fa;
 	display: flex;
 	padding-bottom: 5rem;
 	margin-right: 3rem;
 }
-.bird-detail-page{
+.bird-detail-page {
 	padding-top: 2.5rem;
 	padding-left: 1.4rem;
 	margin-right: 3rem;
 	display: flex;
 }
-.col-xl-9{
+.col-xl-9 {
 	width: 90rem;
 }
-.prescription{
+.prescription {
 	background-color: white;
 	border: 1px solid rgba(0, 0, 0, 0.125);
 	padding-top: 2rem;
@@ -7008,16 +6999,16 @@ html.menu-opened body {
 	margin-bottom: 2rem;
 	margin-top: 2rem;
 }
-.prescription h2{
+.prescription h2 {
 	margin-left: 2rem;
 	margin-bottom: 1rem;
 	color: #17a2b8;
 }
-.prescription .col-md-12 .table{
+.prescription .col-md-12 .table {
 	margin-bottom: 3rem;
 	border: 1px solid rgba(0, 0, 0, 0.125);
 }
-.prescription .col-md-12 .table th{
+.prescription .col-md-12 .table th {
 	color: #d95e33;
 }
 .booking-fee-in-appointments-details {
@@ -7043,7 +7034,7 @@ html.menu-opened body {
 	margin-top: 20px;
 	padding-top: 20px;
 }
-.booking-summary-in-appointments-details h2{
+.booking-summary-in-appointments-details h2 {
 	margin-left: 2rem;
 	margin-bottom: 1rem;
 }
@@ -7062,15 +7053,21 @@ html.menu-opened body {
 	font-size: 25px;
 	float: right;
 }
-.booking-item-wrap-in-appointments-details{
+.booking-item-wrap-in-appointments-details {
 	border: 1px solid #e4e4e4;
 	margin: 0 1rem;
 	padding: 1.2rem 0;
 }
-.prescription-submit{
+.prescription-submit {
 	color: white;
 }
 
-.dropdown-menu-icon{
+.dropdown-menu-icon {
 	margin-right: 5px;
+}
+
+.error-message {
+	color: red;
+	font-size: 12px;
+	margin-top: 2px;
 }
