@@ -12,6 +12,7 @@ export default function CustomerProfileSetting() {
     const [address, setAddress] = useState('');
     const [district, setDistrict] = useState('');
     const [city, setCity] = useState('');
+    const [isFormValidated, setIsFormValidated] = useState(false);
 
     useEffect(() => {
         const storedLoginData = localStorage.getItem('loginData');
@@ -42,25 +43,31 @@ export default function CustomerProfileSetting() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const userData = {
-            firstName,
-            lastName,
-            dateOfBirth,
-            gender,
-            email,
-            phone,
-            address,
-            district,
-            city,
-        };
-        try {
-            await updateUser(user.userId, userData);
-            // Handle successful update
-            console.log('User updated successfully');
-        } catch (error) {
-            // Handle error
-            console.error('Error updating user:', error);
+        const form = e.currentTarget;
+        if (form.checkValidity()) {
+            const userData = {
+                firstName,
+                lastName,
+                dateOfBirth,
+                gender,
+                email,
+                phone,
+                address,
+                district,
+                city,
+            };
+            try {
+                await updateUser(user.userId, userData);
+                // Handle successful update
+                console.log('User updated successfully');
+            } catch (error) {
+                // Handle error
+                console.error('Error updating user:', error);
+            }
+        } else {
+            e.stopPropagation();
         }
+        setIsFormValidated(true);
     };
 
     return (
@@ -68,117 +75,171 @@ export default function CustomerProfileSetting() {
             <div className="card">
                 <div className="card-body">
                     {/* Profile Settings Form */}
-                    <form onSubmit={handleSubmit}>
+                    <form
+                        className={isFormValidated ? 'needs-validation was-validated' : 'needs-validation'}
+                        onSubmit={handleSubmit}
+                        noValidate
+                    >
                         <div className="row form-row">
                             <div className="col-12 col-md-6">
                                 <div className="form-group">
-                                    <label>First Name</label>
+                                    <label htmlFor="firstName">First Name</label>
                                     <input
                                         type="text"
-                                        className="form-control"
+                                        className={`form-control ${isFormValidated && !firstName && 'is-invalid'}`}
+                                        id="firstName"
                                         placeholder="Richard"
                                         value={firstName}
                                         onChange={(e) => setFirstName(e.target.value)}
+                                        required
                                     />
+                                    {isFormValidated && !firstName && (
+                                        <div className="invalid-feedback">Please provide a first name.</div>
+                                    )}
                                 </div>
                             </div>
                             <div className="col-12 col-md-6">
                                 <div className="form-group">
-                                    <label>Last Name</label>
+                                    <label htmlFor="lastName">Last Name</label>
                                     <input
                                         type="text"
-                                        className="form-control"
+                                        className={`form-control ${isFormValidated && !lastName && 'is-invalid'}`}
+                                        id="lastName"
                                         placeholder="Wilson"
                                         value={lastName}
                                         onChange={(e) => setLastName(e.target.value)}
+                                        required
                                     />
+                                    {isFormValidated && !lastName && (
+                                        <div className="invalid-feedback">Please provide a last name.</div>
+                                    )}
                                 </div>
                             </div>
                             <div className="col-12 col-md-6">
                                 <div className="form-group">
-                                    <label>Date of Birth</label>
-                                    <div className="cal-icon">
+                                    <label htmlFor="dateOfBirth">Date of Birth</label>
+                                    <div className="">
                                         <input
                                             type="date"
-                                            className="form-control"
+                                            className={`form-control ${isFormValidated && !dateOfBirth && 'is-invalid'}`}
+                                            id="dateOfBirth"
                                             value={dateOfBirth}
                                             onChange={(e) => setDateOfBirth(e.target.value)}
+                                            required
                                         />
+                                        {isFormValidated && !dateOfBirth && (
+                                            <div className="invalid-feedback">Please provide a date of birth.</div>
+                                        )}
                                     </div>
                                 </div>
                             </div>
                             <div className="col-12 col-md-6">
-                                <div className="form-group">
-                                    <label>Gender</label>
-                                    <select
-                                        className="form-control select"
-                                        value={gender}
-                                        onChange={(e) => setGender(e.target.value)}
-                                    >
-                                        <option>Male</option>
-                                        <option>Female</option>
-                                        <option>Others</option>
-                                    </select>
+                                <div className={`form-group ${isFormValidated && !gender && 'has-validation'}`}>
+                                    <label htmlFor="gender">Gender</label>
+                                    <div className="">
+                                        <select
+                                            className={`form-control ${isFormValidated && !gender && 'is-invalid'}`}
+                                            id="gender"
+                                            value={gender}
+                                            onChange={(e) => setGender(e.target.value)}
+                                            required
+                                        >
+                                            <option value="">Choose...</option>
+                                            <option>Male</option>
+                                            <option>Female</option>
+                                            <option>Others</option>
+                                        </select>
+                                        {isFormValidated && !gender && (
+                                            <div className="invalid-feedback">Please select a gender.</div>
+                                        )}
+                                    </div>
                                 </div>
                             </div>
+
+
                             <div className="col-12 col-md-6">
                                 <div className="form-group">
-                                    <label>Email</label>
+                                    <label htmlFor="email">Email</label>
                                     <input
                                         type="email"
-                                        className="form-control"
+                                        className={`form-control ${isFormValidated && !email && 'is-invalid'}`}
+                                        id="email"
                                         placeholder="email@example.com"
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
+                                        required
                                     />
+                                    {isFormValidated && !email && (
+                                        <div className="invalid-feedback">Please provide an email.</div>
+                                    )}
                                 </div>
                             </div>
                             <div className="col-12 col-md-6">
                                 <div className="form-group">
-                                    <label>Mobile</label>
+                                    <label htmlFor="phone">Mobile</label>
                                     <input
                                         type="text"
+                                        className={`form-control ${isFormValidated && !phone && 'is-invalid'}`}
+                                        id="phone"
                                         placeholder="+1 202-555-0125"
-                                        className="form-control"
                                         value={phone}
                                         onChange={(e) => setPhone(e.target.value)}
+                                        required
                                     />
+                                    {isFormValidated && !phone && (
+                                        <div className="invalid-feedback">Please provide a phone number.</div>
+                                    )}
                                 </div>
                             </div>
                             <div className="col-12">
                                 <div className="form-group">
-                                    <label>Address</label>
+                                    <label htmlFor="address">Address</label>
                                     <input
                                         type="text"
-                                        className="form-control"
+                                        className={`form-control ${isFormValidated && !address && 'is-invalid'}`}
+                                        id="address"
                                         placeholder="123 Pham Van Hai"
                                         value={address}
                                         onChange={(e) => setAddress(e.target.value)}
+                                        required
                                     />
+                                    {isFormValidated && !address && (
+                                        <div className="invalid-feedback">Please provide an address.</div>
+                                    )}
                                 </div>
                             </div>
                             <div className="col-12 col-md-6">
                                 <div className="form-group">
-                                    <label>District</label>
+                                    <label htmlFor="district">District</label>
                                     <input
                                         type="text"
-                                        className="form-control"
+                                        className={`form-control ${isFormValidated && !district && 'is-invalid'}`}
+                                        id="district"
                                         placeholder="Tan Binh"
                                         value={district}
                                         onChange={(e) => setDistrict(e.target.value)}
+                                        required
                                     />
+                                    {isFormValidated && !district && (
+                                        <div className="invalid-feedback">Please provide a district.</div>
+                                    )}
                                 </div>
                             </div>
                             <div className="col-12 col-md-6">
                                 <div className="form-group">
-                                    <label>City</label>
+                                    <label htmlFor="city">City</label>
                                     <input
                                         type="text"
-                                        className="form-control"
+                                        className={`form-control ${isFormValidated && !city && 'is-invalid'}`}
+                                        id="city"
                                         placeholder="Ho Chi Minh"
                                         value={city}
                                         onChange={(e) => setCity(e.target.value)}
+                                        required
                                     />
+                                    {isFormValidated && !city && (
+                                        <div className="invalid-feedback">Please provide a city.</div>
+                                    )}
                                 </div>
                             </div>
                         </div>
