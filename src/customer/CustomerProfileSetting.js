@@ -1,43 +1,84 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { getUserById, updateUser } from '../api/UserAPI';
 
 export default function CustomerProfileSetting() {
+    const [user, setUser] = useState({});
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [dateOfBirth, setDateOfBirth] = useState('');
+    const [gender, setGender] = useState('');
+    const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
+    const [address, setAddress] = useState('');
+    const [district, setDistrict] = useState('');
+    const [city, setCity] = useState('');
+
+    useEffect(() => {
+        const storedLoginData = localStorage.getItem('loginData');
+        if (storedLoginData) {
+            const loginData = JSON.parse(storedLoginData);
+            const userId = loginData.user.sub;
+            fetchUserData(userId);
+        }
+    }, []);
+
+    const fetchUserData = async (userId) => {
+        try {
+            const userData = await getUserById(userId);
+            setUser(userData);
+            setFirstName(userData.firstName);
+            setLastName(userData.lastName);
+            setDateOfBirth(userData.dateOfBirth);
+            setGender(userData.gender);
+            setEmail(userData.email);
+            setPhone(userData.phone);
+            setAddress(userData.address);
+            setDistrict(userData.district);
+            setCity(userData.city);
+        } catch (error) {
+            console.error('Error fetching user data:', error);
+        }
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const userData = {
+            firstName,
+            lastName,
+            dateOfBirth,
+            gender,
+            email,
+            phone,
+            address,
+            district,
+            city,
+        };
+        try {
+            await updateUser(user.userId, userData);
+            // Handle successful update
+            console.log('User updated successfully');
+        } catch (error) {
+            // Handle error
+            console.error('Error updating user:', error);
+        }
+    };
+
     return (
         <div className="col-md-7 col-lg-8 col-xl-9">
             <div className="card">
                 <div className="card-body">
                     {/* Profile Settings Form */}
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <div className="row form-row">
-                            <div className="col-12 col-md-12">
-                                <div className="form-group">
-                                    <div className="change-avatar">
-                                        <div className="profile-img">
-                                            <img
-                                                src="../assets/img/patients/patient.jpg"
-                                                alt="User Image"
-                                            />
-                                        </div>
-                                        <div className="upload-img">
-                                            <div className="change-photo-btn">
-                                                <span>
-                                                    <i className="fa fa-upload" /> Upload Photo
-                                                </span>
-                                                <input type="file" className="upload" />
-                                            </div>
-                                            <small className="form-text text-muted">
-                                                Allowed JPG, GIF or PNG. Max size of 2MB
-                                            </small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                             <div className="col-12 col-md-6">
                                 <div className="form-group">
                                     <label>First Name</label>
                                     <input
                                         type="text"
                                         className="form-control"
-                                        defaultValue="Richard"
+                                        placeholder="Richard"
+                                        value={firstName}
+                                        onChange={(e) => setFirstName(e.target.value)}
                                     />
                                 </div>
                             </div>
@@ -47,7 +88,9 @@ export default function CustomerProfileSetting() {
                                     <input
                                         type="text"
                                         className="form-control"
-                                        defaultValue="Wilson"
+                                        placeholder="Wilson"
+                                        value={lastName}
+                                        onChange={(e) => setLastName(e.target.value)}
                                     />
                                 </div>
                             </div>
@@ -56,20 +99,37 @@ export default function CustomerProfileSetting() {
                                     <label>Date of Birth</label>
                                     <div className="cal-icon">
                                         <input
-                                            type="text"
-                                            className="form-control datetimepicker"
-                                            defaultValue="24-07-1983"
+                                            type="date"
+                                            className="form-control"
+                                            value={dateOfBirth}
+                                            onChange={(e) => setDateOfBirth(e.target.value)}
                                         />
                                     </div>
                                 </div>
                             </div>
                             <div className="col-12 col-md-6">
                                 <div className="form-group">
-                                    <label>Email ID</label>
+                                    <label>Gender</label>
+                                    <select
+                                        className="form-control select"
+                                        value={gender}
+                                        onChange={(e) => setGender(e.target.value)}
+                                    >
+                                        <option>Male</option>
+                                        <option>Female</option>
+                                        <option>Others</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div className="col-12 col-md-6">
+                                <div className="form-group">
+                                    <label>Email</label>
                                     <input
                                         type="email"
                                         className="form-control"
-                                        defaultValue="richard@example.com"
+                                        placeholder="email@example.com"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
                                     />
                                 </div>
                             </div>
@@ -78,18 +138,34 @@ export default function CustomerProfileSetting() {
                                     <label>Mobile</label>
                                     <input
                                         type="text"
-                                        defaultValue="+1 202-555-0125"
+                                        placeholder="+1 202-555-0125"
                                         className="form-control"
+                                        value={phone}
+                                        onChange={(e) => setPhone(e.target.value)}
                                     />
                                 </div>
                             </div>
-                            <div className="col-12 col-md-6">
+                            <div className="col-12">
                                 <div className="form-group">
                                     <label>Address</label>
                                     <input
                                         type="text"
                                         className="form-control"
-                                        defaultValue="806 Twin Willow Lane"
+                                        placeholder="123 Pham Van Hai"
+                                        value={address}
+                                        onChange={(e) => setAddress(e.target.value)}
+                                    />
+                                </div>
+                            </div>
+                            <div className="col-12 col-md-6">
+                                <div className="form-group">
+                                    <label>District</label>
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        placeholder="Tan Binh"
+                                        value={district}
+                                        onChange={(e) => setDistrict(e.target.value)}
                                     />
                                 </div>
                             </div>
@@ -99,52 +175,21 @@ export default function CustomerProfileSetting() {
                                     <input
                                         type="text"
                                         className="form-control"
-                                        defaultValue="Old Forge"
-                                    />
-                                </div>
-                            </div>
-                            <div className="col-12 col-md-6">
-                                <div className="form-group">
-                                    <label>State</label>
-                                    <input
-                                        type="text"
-                                        className="form-control"
-                                        defaultValue="Newyork"
-                                    />
-                                </div>
-                            </div>
-                            <div className="col-12 col-md-6">
-                                <div className="form-group">
-                                    <label>Zip Code</label>
-                                    <input
-                                        type="text"
-                                        className="form-control"
-                                        defaultValue={13420}
-                                    />
-                                </div>
-                            </div>
-                            <div className="col-12 col-md-6">
-                                <div className="form-group">
-                                    <label>Country</label>
-                                    <input
-                                        type="text"
-                                        className="form-control"
-                                        defaultValue="United States"
+                                        placeholder="Ho Chi Minh"
+                                        value={city}
+                                        onChange={(e) => setCity(e.target.value)}
                                     />
                                 </div>
                             </div>
                         </div>
                         <div className="submit-section">
                             <button type="submit" className="btn btn-primary submit-btn">
-                                Save Changes
+                                Update
                             </button>
                         </div>
                     </form>
-                    {/* /Profile Settings Form */}
                 </div>
             </div>
         </div>
-
-
-    )
+    );
 }
