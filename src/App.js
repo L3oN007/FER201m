@@ -11,6 +11,7 @@ import BookingConfirm from './customer/BookingConfirm';
 import BookingList from './customer/BookingList';
 import BookingSuccessfully from './customer/BookingSuccessfully';
 import Customer from './customer/Customer';
+import CustomerBirdList from './customer/CustomerBirdList';
 import CustomerDashboard from './customer/CustomerDashboard';
 import CustomerProfileSetting from './customer/CustomerProfileSetting';
 import DoctorDashboard from './doctor/DoctorDashboard';
@@ -26,6 +27,7 @@ function App() {
             <Route element={<Customer />} path='customer' >
               <Route element={<CustomerDashboard />} path='customer-dashboard' />
               <Route element={<CustomerProfileSetting />} path='customer-profile-setting' />
+              <Route element={<CustomerBirdList />} path='customer-bird-list' />
             </Route>
 
 

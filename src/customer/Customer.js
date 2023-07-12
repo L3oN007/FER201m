@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink, Route, Routes } from 'react-router-dom';
 import Breadcrumb from '../components/Breadcrumb';
+import CustomerBirdList from './CustomerBirdList';
 import CustomerDashboard from './CustomerDashboard';
 import CustomerProfileSetting from './CustomerProfileSetting';
 
@@ -55,10 +56,10 @@ export default function Customer() {
                                                 </NavLink>
                                             </li>
                                             <li>
-                                                <a href="birdlist.html">
+                                                <NavLink to="customer-bird-list">
                                                     <i className="fa fa-tasks" />
                                                     <span>Birds List</span>
-                                                </a>
+                                                </NavLink>
                                             </li>
                                             <li>
                                                 <NavLink to="customer-profile-setting" activeClassName="active">
@@ -81,6 +82,8 @@ export default function Customer() {
                         <Routes>
                             <Route element={<CustomerDashboard />} path="customer-dashboard" />
                             <Route element={<CustomerProfileSetting />} path="customer-profile-setting" />
+                            <Route element={<CustomerBirdList />} path='customer-bird-list' />
+
                         </Routes>
                     </div>
                 </div>
