@@ -20,6 +20,8 @@ export default function Navigation() {
         const expirationTime = new Date().getTime() + 7 * 24 * 60 * 60 * 1000;
         const loginData = { user: userObject, expiresAt: expirationTime };
         localStorage.setItem("loginData", JSON.stringify(loginData));
+
+
     }
 
     function handleSignOut() {
@@ -160,7 +162,7 @@ export default function Navigation() {
                                             className="rounded-circle"
                                             src={user.picture}
                                             width={31}
-                                            alt="Ryan Taylor"
+                                            alt="User Img"
                                         />
                                     </span>
                                 </a>
@@ -179,7 +181,7 @@ export default function Navigation() {
                                             {/* <p className="text-muted mb-0">Patient</p> */}
                                         </div>
                                     </div>
-                                    <Link className="dropdown-item" to='/customer'>
+                                    <Link className="dropdown-item" to='/customer/customer-dashboard'>
                                         <i class="fa-solid fa-gauge dropdown-menu-icon"></i>Dashboard
                                     </Link>
                                     <Link className="dropdown-item" to='/customer-profile-setting'>

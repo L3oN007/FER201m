@@ -2,6 +2,29 @@ import axios from 'axios';
 
 const API_URL = 'https://648867740e2469c038fda6cc.mockapi.io/user';
 
+
+export const checkAuthorize = async (userId) => {
+    try {
+        const users = await getUsers();
+        const storedLoginData = localStorage.getItem('loginData');
+        if (storedLoginData) {
+            const loginData = JSON.parse(storedLoginData);
+            const storedUserId = loginData.user.sub;
+            if (storedUserId === userId) {
+                const user = users.find((user) => user.userId === userId);
+                if (user) {
+                    return user.role;
+                }
+            }
+        }
+        return "Unauthorized";
+    } catch (error) {
+        console.error("Error retrieving users:", error);
+        throw error;
+    }
+};
+
+
 // GET all users
 export const getUsers = async () => {
     try {

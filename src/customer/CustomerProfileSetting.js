@@ -88,7 +88,7 @@ export default function CustomerProfileSetting() {
                                         type="text"
                                         className={`form-control ${isFormValidated && !firstName && 'is-invalid'}`}
                                         id="firstName"
-                                        placeholder="Richard"
+                                        placeholder="First Name"
                                         value={firstName}
                                         onChange={(e) => setFirstName(e.target.value)}
                                         required
@@ -105,7 +105,7 @@ export default function CustomerProfileSetting() {
                                         type="text"
                                         className={`form-control ${isFormValidated && !lastName && 'is-invalid'}`}
                                         id="lastName"
-                                        placeholder="Wilson"
+                                        placeholder="Last Name"
                                         value={lastName}
                                         onChange={(e) => setLastName(e.target.value)}
                                         required
@@ -181,7 +181,7 @@ export default function CustomerProfileSetting() {
                                         type="text"
                                         className={`form-control ${isFormValidated && !phone && 'is-invalid'}`}
                                         id="phone"
-                                        placeholder="+1 202-555-0125"
+                                        placeholder="(+84) 123-456-789"
                                         value={phone}
                                         onChange={(e) => setPhone(e.target.value)}
                                         required
@@ -198,7 +198,7 @@ export default function CustomerProfileSetting() {
                                         type="text"
                                         className={`form-control ${isFormValidated && !address && 'is-invalid'}`}
                                         id="address"
-                                        placeholder="123 Pham Van Hai"
+                                        placeholder="Your Address"
                                         value={address}
                                         onChange={(e) => setAddress(e.target.value)}
                                         required
@@ -215,7 +215,7 @@ export default function CustomerProfileSetting() {
                                         type="text"
                                         className={`form-control ${isFormValidated && !district && 'is-invalid'}`}
                                         id="district"
-                                        placeholder="Tan Binh"
+                                        placeholder="Your District"
                                         value={district}
                                         onChange={(e) => setDistrict(e.target.value)}
                                         required
@@ -232,7 +232,7 @@ export default function CustomerProfileSetting() {
                                         type="text"
                                         className={`form-control ${isFormValidated && !city && 'is-invalid'}`}
                                         id="city"
-                                        placeholder="Ho Chi Minh"
+                                        placeholder="Your City"
                                         value={city}
                                         onChange={(e) => setCity(e.target.value)}
                                         required
