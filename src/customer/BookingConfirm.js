@@ -1,16 +1,39 @@
 
 import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { useEffect, useState } from 'react';
 import * as Yup from 'yup';
 
 export default function BookingConfirm() {
     const validationSchema = Yup.object({
         fullName: Yup.string().required('Full Name is required'),
-        email: Yup.string().email('Invalid email address').required('Email is required'),
+        email: Yup.string().required('Email is required'),
         phone: Yup.string().required('Phone is required'),
         services: Yup.string().required('Please choose a service'),
         symptoms: Yup.string().required('Symptoms description is required'),
+        birdId: Yup.string().required('Please choose your bird'),
     });
+    const [birds, setBirds] = useState([]);
+    const [LoginUser, setLoginUser] = useState({});
+    const [user, setUser] = useState([]);
 
+
+    useEffect(() => {
+
+        const storedLoginData = localStorage.getItem('loginData');
+        if (storedLoginData) {
+            const loginData = JSON.parse(storedLoginData);
+            setLoginUser(loginData.user);
+            fetch(`https://64b0cbc3062767bc48252f14.mockapi.io/user/${loginData.user.sub}`)
+                .then(response => response.json())
+                .then(data => setUser(data))
+                .catch(error => console.error(error));
+
+            fetch(`https://64b0cbc3062767bc48252f14.mockapi.io/user/${loginData.user.sub}/bird`)
+                .then(response => response.json())
+                .then(data => setBirds(data))
+                .catch(error => console.error(error));
+        }
+    }, []);
 
 
     const handleSubmit = (values) => {
@@ -51,11 +74,15 @@ export default function BookingConfirm() {
                                 <div className="card-body">
                                     {/* Checkout Form */}
                                     <Formik
+                                        enableReinitialize
                                         initialValues={{
-                                            fullName: '',
-                                            email: '',
-                                            phone: '',
+                                            fullName: `${user.firstName + " " + user.lastName}`,
+                                            email: `${user.email}`,
+                                            phone: `${user.phone}`,
+                                            userId: `${user.userId}`,
+                                            birdId: '',
                                             services: '',
+                                            datetime: '',
                                             symptoms: '',
                                         }}
                                         validationSchema={validationSchema}
@@ -68,7 +95,7 @@ export default function BookingConfirm() {
                                                     <div className="col-md-6 col-sm-12">
                                                         <div className="form-group card-label">
                                                             <label>Full Name</label>
-                                                            <Field className="form-control" type="text" name="fullName" />
+                                                            <Field className="form-control" type="text" name="fullName" value={user.firstName + " " + user.lastName} disabled />
                                                             <ErrorMessage
                                                                 name="fullName"
                                                                 component="div"
@@ -79,7 +106,7 @@ export default function BookingConfirm() {
                                                     <div className="col-md-6 col-sm-12">
                                                         <div className="form-group card-label">
                                                             <label>Email</label>
-                                                            <Field className="form-control" type="email" name="email" />
+                                                            <Field className="form-control" type="email" name="email" value={user.email} disabled />
                                                             <ErrorMessage
                                                                 name="email"
                                                                 component="div"
@@ -90,7 +117,7 @@ export default function BookingConfirm() {
                                                     <div className="col-md-6 col-sm-12">
                                                         <div className="form-group card-label">
                                                             <label>Phone</label>
-                                                            <Field className="form-control" type="text" name="phone" />
+                                                            <Field className="form-control" type="text" name="phone" value={user.phone} disabled />
                                                             <ErrorMessage
                                                                 name="phone"
                                                                 component="div"
@@ -101,10 +128,9 @@ export default function BookingConfirm() {
                                                     <div className="col-md-6 col-sm-12">
                                                         <div className="form-group card-label">
                                                             <label>Gender</label>
-                                                            <Field as="select" className="form-control" name="gender">
-                                                                <option value="Male">Male</option>
-                                                                <option value="Female">Female</option>
-                                                                <option value="Other">Other</option>
+                                                            <Field as="select" className="form-control" name="gender" disabled>
+                                                                <option value={user.gender} selected>{user.gender}</option>
+
                                                             </Field>
                                                         </div>
                                                     </div>
@@ -117,11 +143,19 @@ export default function BookingConfirm() {
                                                     <div className="col-md-12 col-sm-12">
                                                         <div className="form-group card-label">
                                                             <label>Choose your bird</label>
-                                                            <Field as="select" className="form-control" name="bird">
-                                                                <option value="dog">Andy</option>
-                                                                <option value="cat">Mateo</option>
-                                                                <option value="bird">Tom</option>
+                                                            <Field as="select" className="form-control" name="birdId">
+                                                                <option value="">--</option>
+                                                                {birds.map(bird => (
+                                                                    <option value={bird.birdId}>
+                                                                        {bird.birdName}
+                                                                    </option>
+                                                                ))}
                                                             </Field>
+                                                            <ErrorMessage
+                                                            name="birdId"
+                                                            component="div"
+                                                            className="error-message"
+                                                        />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -129,6 +163,11 @@ export default function BookingConfirm() {
 
                                             <div className="info-widget">
                                                 <h4 className="card-title">Notes</h4>
+                                                <div className="col-md-12 col-sm-12">
+                                                    <div className="form-group card-label">
+
+                                                    </div>
+                                                </div>
                                                 <div className="col-md-12 col-sm-12">
                                                     <div className="form-group card-label">
                                                         <label>Choose services</label>
@@ -139,6 +178,19 @@ export default function BookingConfirm() {
                                                             <option value="imaging">Imaging</option>
                                                             <option value="nutrition">Nutrition</option>
                                                             <option value="genetics">Genetics</option>
+                                                        </Field>
+                                                        <ErrorMessage
+                                                            name="services"
+                                                            component="div"
+                                                            className="error-message"
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <div className="col-md-12 col-sm-12">
+                                                    <div className="form-group card-label">
+                                                        <label>Date & time</label>
+                                                        <Field as="input" type="datetime-local" className="form-control" name="datetime">
+
                                                         </Field>
                                                         <ErrorMessage
                                                             name="services"
