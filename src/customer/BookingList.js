@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
@@ -74,7 +75,7 @@ export default function BookingList() {
                   their infancy. Various versions have evolved over the years,
                   sometimes
                 </p>
-                <a href="booking-all.html" className='mr-2'>Book All</a>
+                <Link to='/booking-confirm' className='mr-2'>Book All</Link>
                 <a href="javascript:;">Read More..</a>
               </div>
             </div>
@@ -148,9 +149,9 @@ export default function BookingList() {
                           </a>
                         </div>
                         <div className="col-6">
-                          <a href="booking.html" className="btn book-btn">
+                          <Link to='booking-confirm' className="btn book-btn">
                             Book Now
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -207,9 +208,9 @@ export default function BookingList() {
                           </a>
                         </div>
                         <div className="col-6">
-                          <a href="booking.html" className="btn book-btn">
+                        <Link to='booking-confirm' className="btn book-btn">
                             Book Now
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -266,9 +267,9 @@ export default function BookingList() {
                           </a>
                         </div>
                         <div className="col-6">
-                          <a href="booking.html" className="btn book-btn">
+                        <Link to='booking-confirm' className="btn book-btn">
                             Book Now
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -325,9 +326,9 @@ export default function BookingList() {
                           </a>
                         </div>
                         <div className="col-6">
-                          <a href="booking.html" className="btn book-btn">
+                        <Link to='booking-confirm' className="btn book-btn">
                             Book Now
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -387,9 +388,9 @@ export default function BookingList() {
                           </a>
                         </div>
                         <div className="col-6">
-                          <a href="booking.html" className="btn book-btn">
+                        <Link to='booking-confirm' className="btn book-btn">
                             Book Now
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -446,9 +447,9 @@ export default function BookingList() {
                           </a>
                         </div>
                         <div className="col-6">
-                          <a href="booking.html" className="btn book-btn">
+                        <Link to='booking-confirm' className="btn book-btn">
                             Book Now
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -505,9 +506,9 @@ export default function BookingList() {
                           </a>
                         </div>
                         <div className="col-6">
-                          <a href="booking.html" className="btn book-btn">
+                        <Link to='booking-confirm' className="btn book-btn">
                             Book Now
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -564,9 +565,9 @@ export default function BookingList() {
                           </a>
                         </div>
                         <div className="col-6">
-                          <a href="booking.html" className="btn book-btn">
+                        <Link to='booking-confirm' className="btn book-btn">
                             Book Now
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>

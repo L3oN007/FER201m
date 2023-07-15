@@ -2,30 +2,32 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { useEffect, useState } from 'react';
 import * as Yup from 'yup';
+import { Link, useHistory } from 'react-router-dom';
+
 
 export default function BookingConfirm() {
     const validationSchema = Yup.object({
-        fullName: Yup.string().required('Full Name is required'),
-        email: Yup.string().required('Email is required'),
-        phone: Yup.string().required('Phone is required'),
-        services: Yup.string().required('Please choose a service'),
-        symptoms: Yup.string().required('Symptoms description is required'),
+        service: Yup.string().required('Please choose a service'),
+        description: Yup.string().required('Symptoms description is required'),
         birdId: Yup.string().required('Please choose your bird'),
     });
     const [birds, setBirds] = useState([]);
     const [LoginUser, setLoginUser] = useState({});
     const [user, setUser] = useState([]);
-
+    const history = useHistory();
 
     useEffect(() => {
 
         const storedLoginData = localStorage.getItem('loginData');
+        console.log("storedLoginData:  " + storedLoginData);
         if (storedLoginData) {
             const loginData = JSON.parse(storedLoginData);
+
             setLoginUser(loginData.user);
             fetch(`https://64b0cbc3062767bc48252f14.mockapi.io/user/${loginData.user.sub}`)
                 .then(response => response.json())
                 .then(data => setUser(data))
+                // .then(console.log("Login data: "+JSON.stringify(user)))
                 .catch(error => console.error(error));
 
             fetch(`https://64b0cbc3062767bc48252f14.mockapi.io/user/${loginData.user.sub}/bird`)
@@ -37,7 +39,33 @@ export default function BookingConfirm() {
 
 
     const handleSubmit = (values) => {
-        console.log('Form Values:', values);
+        console.log(values);
+        // Extract the birdId from the form values
+        const birdId = values.birdId;
+
+        // Remove the birdId from the form values before sending to the API
+        const formData = { ...values };
+        delete formData.birdId;
+
+        // Make the API request
+        fetch(`https://64b0cbc3062767bc48252f14.mockapi.io/user/${LoginUser.sub}/bird/${birdId}/app`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+        })
+            .then(response => response.json())
+            .then(data => {
+                // Handle the API response
+                console.log('API response:', data);
+                // Redirect to the success page
+                // history.push('/booking-successfully');
+            })
+            .catch(error => {
+                // Handle any errors
+                console.error('Error:', error);
+            });
     };
 
 
@@ -76,14 +104,12 @@ export default function BookingConfirm() {
                                     <Formik
                                         enableReinitialize
                                         initialValues={{
-                                            fullName: `${user.firstName + " " + user.lastName}`,
-                                            email: `${user.email}`,
-                                            phone: `${user.phone}`,
                                             userId: `${user.userId}`,
                                             birdId: '',
-                                            services: '',
-                                            datetime: '',
-                                            symptoms: '',
+                                            service: '',
+                                            dateTime: '',
+                                            description: '',
+                                            status: 'processing',
                                         }}
                                         validationSchema={validationSchema}
                                         onSubmit={handleSubmit}
@@ -152,10 +178,10 @@ export default function BookingConfirm() {
                                                                 ))}
                                                             </Field>
                                                             <ErrorMessage
-                                                            name="birdId"
-                                                            component="div"
-                                                            className="error-message"
-                                                        />
+                                                                name="birdId"
+                                                                component="div"
+                                                                className="error-message"
+                                                            />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -170,8 +196,8 @@ export default function BookingConfirm() {
                                                 </div>
                                                 <div className="col-md-12 col-sm-12">
                                                     <div className="form-group card-label">
-                                                        <label>Choose services</label>
-                                                        <Field as="select" className="form-control" name="services">
+                                                        <label>Choose service</label>
+                                                        <Field as="select" className="form-control" name="service">
                                                             <option value="">--</option>
                                                             <option value="general">General</option>
                                                             <option value="surgery">Surgery</option>
@@ -180,7 +206,7 @@ export default function BookingConfirm() {
                                                             <option value="genetics">Genetics</option>
                                                         </Field>
                                                         <ErrorMessage
-                                                            name="services"
+                                                            name="service"
                                                             component="div"
                                                             className="error-message"
                                                         />
@@ -189,7 +215,7 @@ export default function BookingConfirm() {
                                                 <div className="col-md-12 col-sm-12">
                                                     <div className="form-group card-label">
                                                         <label>Date & time</label>
-                                                        <Field as="input" type="datetime-local" className="form-control" name="datetime">
+                                                        <Field as="input" type="datetime-local" className="form-control" name="dateTime">
 
                                                         </Field>
                                                         <ErrorMessage
@@ -206,10 +232,10 @@ export default function BookingConfirm() {
                                                             className="form-control"
                                                             rows={4}
                                                             placeholder="Describe bird's symptoms"
-                                                            name="symptoms"
+                                                            name="description"
                                                         />
                                                         <ErrorMessage
-                                                            name="symptoms"
+                                                            name="description"
                                                             component="div"
                                                             className="error-message"
                                                         />
@@ -218,9 +244,9 @@ export default function BookingConfirm() {
                                             </div>
 
                                             <div className="submit-section mt-4">
-                                                <button type="submit" className="btn btn-primary submit-btn">
+                                                <Link to="/booking-successfully" type="submit" className="btn btn-primary submit-btn">
                                                     Confirm and submit
-                                                </button>
+                                                </Link>
                                             </div>
                                         </Form>
                                     </Formik>

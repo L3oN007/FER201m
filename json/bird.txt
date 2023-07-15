@@ -1,0 +1,79 @@
+[
+ {
+  "birdName": "Charlie",
+  "avatar": "https://www.publicdomainpictures.net/pictures/60000/nahled/bird-1382262607iEg.jpg",
+  "hatchDate": "2022-02-01",
+  "sex": true,
+  "weight": 0.25,
+  "microchip": "ABC123DEF456",
+  "birdId": "1",
+  "userId": "108601656435928649058",
+  "birdBreed": "Parakeet"
+ },
+ {
+  "birdName": "Buddy",
+  "avatar": "https://2.bp.blogspot.com/-TA1D79yxcnM/Tyy6ng42rbI/AAAAAAAAAnc/-4s-bZaYc_U/s1600/colorfull+bird+HD+wallpaper.jpg",
+  "hatchDate": "2021-11-15",
+  "sex": false,
+  "weight": 0.18,
+  "microchip": "XYZ789PQR123",
+  "birdId": "2",
+  "userId": "108601656435928649058",
+  "birdBreed": "Lovebird"
+ },
+ {
+  "birdName": "Kiwi",
+  "avatar": "https://images6.fanpop.com/image/photos/40700000/Colourful-Bird-birds-40741713-1280-960.jpg",
+  "hatchDate": "2023-01-10",
+  "sex": true,
+  "weight": 0.1,
+  "microchip": "MNO456XYZ789",
+  "birdId": "3",
+  "userId": "108069864305309013486",
+  "birdBreed": "Cockatiel"
+ },
+ {
+  "birdName": "Pepper",
+  "avatar": "https://www.publicdomainpictures.net/pictures/60000/nahled/bird-1382262607iEg.jpg",
+  "hatchDate": "2022-06-25",
+  "sex": false,
+  "weight": 0.15,
+  "microchip": "JKL789PQR123",
+  "birdId": "4",
+  "userId": "108069864305309013486",
+  "birdBreed": "Budgerigar"
+ },
+ {
+  "birdName": "Sunny",
+  "avatar": "https://sp-ao.shortpixel.ai/client/q_glossy,ret_img/https://chilternchatter.com/wp-content/uploads/2018/01/RED-Bird.jpg",
+  "hatchDate": "2023-03-12",
+  "sex": true,
+  "weight": 0.12,
+  "microchip": "DEF456GHI789",
+  "birdId": "5",
+  "userId": "108069864305309013486",
+  "birdBreed": "Canary"
+ },
+ {
+  "birdName": "Coco",
+  "avatar": "https://images.pexels.com/photos/2662434/pexels-photo-2662434.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "hatchDate": "2022-09-05",
+  "sex": false,
+  "weight": 0.2,
+  "microchip": "PQR123XYZ789",
+  "birdId": "6",
+  "userId": "108601656435928649058",
+  "birdBreed": "Cockatiel"
+ },
+ {
+  "birdName": "Rio",
+  "avatar": "https://images.pexels.com/photos/2629372/pexels-photo-2629372.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "hatchDate": "2023-04-20",
+  "sex": true,
+  "weight": 0.22,
+  "microchip": "GHI789JKL123",
+  "birdId": "7",
+  "userId": "108069864305309013486",
+  "birdBreed": "Parrot"
+ }
+]

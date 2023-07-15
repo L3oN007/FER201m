@@ -1,0 +1,107 @@
+ [
+    {
+        "appId": "1",
+        "appTime": "10:00 AM",
+        "dateTime": "2023-07-15T10:00:00",
+        "service": "General",
+        "description": "General check-up and assessment.",
+        "userId": "108601656435928649058",
+        "birdId": "1",
+        "status": "processing"
+      },
+      
+      {
+        "appId": "2",
+        "appTime": "11:30 AM",
+        "dateTime": "2023-07-16T11:30:00",
+        "service": "Surgery",
+        "description": "Surgical procedure or intervention.",
+        "userId": "108601656435928649058",
+        "birdId": "2",
+        "status": "checkin"
+      },
+      {
+        "appId": "3",
+        "appTime": "2:00 PM",
+        "dateTime": "2023-07-17T14:00:00",
+        "service": "Imaging",
+        "description": "Diagnostic imaging (X-ray, ultrasound, etc.).",
+        "userId": "108069864305309013486",
+        "birdId": "3",
+        "status": "checkout"
+      },
+      {
+        "appId": "4",
+        "appTime": "9:30 AM",
+        "dateTime": "2023-07-18T09:30:00",
+        "service": "Nutrition",
+        "description": "Consultation regarding bird's diet and nutrition.",
+        "userId": "108069864305309013486",
+        "birdId": "4",
+        "status": "complete"
+      },
+      {
+        "appId": "5",
+        "appTime": "1:00 PM",
+        "dateTime": "2023-07-19T13:00:00",
+        "service": "Genetics",
+        "description": "Genetic testing and analysis.",
+        "userId": "108069864305309013486",
+        "birdId": "5",
+        "status": "canceled"
+      },
+      {
+        "appId": "6",
+        "appTime": "3:30 PM",
+        "dateTime": "2023-07-20T15:30:00",
+        "service": "General",
+        "description": "Routine check-up and health assessment.",
+        "userId": "108601656435928649058",
+        "birdId": "6",
+        "status": "processing"
+      },
+      {
+        "appId": "7",
+        "appTime": "11:00 AM",
+        "dateTime": "2023-07-21T11:00:00",
+        "service": "Surgery",
+        "description": "Scheduled surgical procedure.",
+        "userId": "108069864305309013486",
+        "birdId": "7",
+        "status": "checkin"
+      },
+      {
+        "appId": "8",
+        "appTime": "10:30 AM",
+        "dateTime": "2023-07-22T10:30:00",
+        "service": "Imaging",
+        "description": "Diagnostic imaging for medical evaluation.",
+        "userId": "108601656435928649058",
+        "birdId": "1",
+        "status": "check out"
+      }
+      ,
+      {
+        "appId": "9",
+        "appTime": "12:00 PM",
+        "dateTime": "2023-07-23T12:00:00",
+        "service": "Nutrition",
+        "description": "Consultation regarding bird's dietary needs.",
+        "userId": "108601656435928649058",
+        "birdId": "2",
+        "status": "complete"
+      },
+      {
+        "appId": "10",
+        "appTime": "3:00 PM",
+        "dateTime": "2023-07-24T15:00:00",
+        "service": "Genetics",
+        "description": "Genetic testing and analysis.",
+        "userId": "108069864305309013486",
+        "birdId": "3",
+        "status": "canceled"
+      }
+      
+      
+        
+]
