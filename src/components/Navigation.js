@@ -1,27 +1,32 @@
 import jwt_decode from "jwt-decode";
 import React, { useEffect, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
+import { getUserRole } from "../api/UserAPI";
+import { useAuth } from "../context/AuthProvider";
 
 
 export default function Navigation() {
     const [user, setUser] = useState({});
     const [showSignInDiv, setShowSignInDiv] = useState(true);
+    const { setAuth } = useAuth();
 
-
-
-    function handleCredentialResponse(response) {
+    async function handleCredentialResponse(response) {
         console.log("Encoded JWT ID token: " + response.credential);
         var userObject = jwt_decode(response.credential);
         console.log(userObject);
         setUser(userObject);
 
+        try {
+            const role = await getUserRole(userObject.sub);
+            const authData = { user: userObject, role };
+            setAuth(authData);
+        } catch (error) {
+            console.error("Error retrieving user role:", error);
+        }
 
-        // Set expiration time to 1 week (7 days)
         const expirationTime = new Date().getTime() + 7 * 24 * 60 * 60 * 1000;
         const loginData = { user: userObject, expiresAt: expirationTime };
         localStorage.setItem("loginData", JSON.stringify(loginData));
-
-
     }
 
     function handleSignOut() {
@@ -44,24 +49,20 @@ export default function Navigation() {
                 theme: "outline",
                 size: "large",
             });
-            google.accounts.id.prompt(); // also display the One Tap dialog
+            google.accounts.id.prompt();
         };
 
-        // Retrieve login data from localStorage on component mount
         const storedLoginData = localStorage.getItem("loginData");
         if (storedLoginData) {
             const loginData = JSON.parse(storedLoginData);
-            // Check if login has expired
             if (loginData.expiresAt > new Date().getTime()) {
                 setUser(loginData.user);
                 setShowSignInDiv(false);
             } else {
-                // Remove expired login data
                 localStorage.removeItem("loginData");
                 setShowSignInDiv(true);
             }
         }
-
     }, []);
 
 

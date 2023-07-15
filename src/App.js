@@ -5,7 +5,7 @@ import Error from './components/Error';
 import Index from './components/Index';
 import Layout from './components/Layout';
 import RequireAuth from './components/RequireAuth';
-import CustomerDashboard from './customer/CustomerDashboard';
+import Customer from './customer/Customer';
 
 function App() {
 
@@ -17,11 +17,9 @@ function App() {
 
 
         {/* we want to protect these routes */}
-        <Route element={<RequireAuth allowedRoles={[]} />}>
-          <Route path="/" element={<CustomerDashboard />} />
+        <Route element={<RequireAuth allowedRoles={['admin']} />}>
+          <Route path="/customer" element={<Customer />} />
         </Route>
-
-
 
         {/* catch all */}
         <Route path="*" element={<Error />} />

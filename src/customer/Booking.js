@@ -1,233 +1,160 @@
-import React from 'react'
+import React from 'react';
+import Breadcrumb from '../components/Breadcrumb';
 
 export default function Booking() {
     return (
         <>
-            {/* Breadcrumb */}
-            <div className="breadcrumb-bar">
-                <div className="container-fluid">
-                    <div className="row align-items-center">
-                        <div className="col-md-12 col-12">
-                            <nav aria-label="breadcrumb" className="page-breadcrumb">
-                                <ol className="breadcrumb">
-                                    <li className="breadcrumb-item">
-                                        <a href="index.html">Home</a>
-                                    </li>
-                                    <li className="breadcrumb-item active" aria-current="page">
-                                        Booking
-                                    </li>
-                                </ol>
-                            </nav>
-                            <h2 className="breadcrumb-title">Booking</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {/* /Breadcrumb */}
-            {/* Page Content */}
-            <div className="content">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-12">
-                            <div className="card">
-                                <div className="card-body">
-                                    <div className="booking-doc-info">
-                                        <a href="doctor-profile.html" className="booking-doc-img">
-                                            <img
-                                                src="assets/img/doctors/doctor-thumb-02.jpg"
-                                                alt="User Image"
-                                            />
-                                        </a>
-                                        <div className="booking-info">
-                                            <h4>
-                                                <a href="doctor-profile.html">Dr. ABC</a>
-                                            </h4>
-                                            {/* <div class="rating">
-												<i class="fas fa-star filled"></i>
-												<i class="fas fa-star filled"></i>
-												<i class="fas fa-star filled"></i>
-												<i class="fas fa-star filled"></i>
-												<i class="fas fa-star"></i>
-												<span class="d-inline-block average-rating">35</span>
-											</div> */}
-                                            <p className="text-muted mb-0">
-                                                <i className="fas fa-map-marker-alt" /> Dong Da district,
-                                                Hanoi city
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* Schedule Widget */}
-                            <div className="card booking-schedule schedule-widget">
-                                {/* Schedule Header */}
-                                <div className="schedule-header">
-                                    <div className="row">
-                                        <div className="col-md-12">
-                                            {/* Day Slot */}
-                                            <div className="day-slot">
-                                                <ul>
-                                                    <li className="left-arrow">
-                                                        <a href="#">
-                                                            <i className="fa fa-chevron-left" />
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <span>Mon</span>
-                                                        <span className="slot-date">
-                                                            11 Jun <small className="slot-year">2023</small>
-                                                        </span>
-                                                    </li>
-                                                    <li>
-                                                        <span>Tue</span>
-                                                        <span className="slot-date">
-                                                            12 Jun <small className="slot-year">2023</small>
-                                                        </span>
-                                                    </li>
-                                                    <li>
-                                                        <span>Wed</span>
-                                                        <span className="slot-date">
-                                                            13 Jun <small className="slot-year">2023</small>
-                                                        </span>
-                                                    </li>
-                                                    <li>
-                                                        <span>Thu</span>
-                                                        <span className="slot-date">
-                                                            14 Jun <small className="slot-year">2023</small>
-                                                        </span>
-                                                    </li>
-                                                    <li>
-                                                        <span>Fri</span>
-                                                        <span className="slot-date">
-                                                            15 Jun <small className="slot-year">2023</small>
-                                                        </span>
-                                                    </li>
-                                                    <li>
-                                                        <span>Sat</span>
-                                                        <span className="slot-date">
-                                                            16 Jun <small className="slot-year">2023</small>
-                                                        </span>
-                                                    </li>
-                                                    <li>
-                                                        <span>Sun</span>
-                                                        <span className="slot-date">
-                                                            17 Jun <small className="slot-year">2023</small>
-                                                        </span>
-                                                    </li>
-                                                    <li className="right-arrow">
-                                                        <a href="#">
-                                                            <i className="fa fa-chevron-right" />
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            {/* /Day Slot */}
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* /Schedule Header */}
-                                {/* Schedule Content */}
-                                <div className="schedule-cont">
-                                    <div className="row">
-                                        <div className="col-md-12">
-                                            {/* Time Slot */}
-                                            <div className="time-slot">
-                                                <ul className="clearfix">
-                                                    <li>
-                                                        <a className="timing" href="#">
-                                                            {" "}
-                                                            <span>9:00</span> <span>AM</span>{" "}
-                                                        </a>
-                                                        <a className="timing" href="#">
-                                                            {" "}
-                                                            <span>10:00</span> <span>AM</span>{" "}
-                                                        </a>
-                                                    </li>
-                                                    <li></li>
-                                                    <li>
-                                                        <a className="timing" href="#">
-                                                            {" "}
-                                                            <span>9:00</span> <span>AM</span>{" "}
-                                                        </a>
-                                                        <a className="timing" href="#">
-                                                            {" "}
-                                                            <span>10:00</span> <span>AM</span>{" "}
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a className="timing" href="#">
-                                                            {" "}
-                                                            <span>9:00</span> <span>AM</span>{" "}
-                                                        </a>
-                                                        <a className="timing" href="#">
-                                                            {" "}
-                                                            <span>11:00</span> <span>AM</span>{" "}
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a className="timing" href="#">
-                                                            {" "}
-                                                            <span>9:00</span> <span>AM</span>{" "}
-                                                        </a>
-                                                        <a className="timing selected" href="#">
-                                                            {" "}
-                                                            <span>10:00</span> <span>AM</span>{" "}
-                                                        </a>
-                                                        <a className="timing" href="#">
-                                                            {" "}
-                                                            <span>11:00</span> <span>AM</span>{" "}
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a className="timing" href="#">
-                                                            {" "}
-                                                            <span>9:00</span> <span>AM</span>{" "}
-                                                        </a>
-                                                        <a className="timing" href="#">
-                                                            {" "}
-                                                            <span>10:00</span> <span>AM</span>{" "}
-                                                        </a>
-                                                        <a className="timing" href="#">
-                                                            {" "}
-                                                            <span>11:00</span> <span>AM</span>{" "}
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a className="timing" href="#">
-                                                            {" "}
-                                                            <span>9:00</span> <span>AM</span>{" "}
-                                                        </a>
-                                                        <a className="timing" href="#">
-                                                            {" "}
-                                                            <span>10:00</span> <span>AM</span>{" "}
-                                                        </a>
-                                                        <a className="timing" href="#">
-                                                            {" "}
-                                                            <span>11:00</span> <span>AM</span>{" "}
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            {/* /Time Slot */}
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* /Schedule Content */}
-                            </div>
-                            {/* /Schedule Widget */}
-                            {/* Submit Section */}
-                            <div className="submit-section proceed-btn text-right">
-                                <a href="BookInfo-all.html" className="btn btn-primary submit-btn">
-                                    Next
-                                </a>
-                            </div>
-                            {/* /Submit Section */}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {/* /Page Content */}
-        </>
+            <Breadcrumb />
 
-    )
+            <div className="position-relative">
+                <div className="shape overflow-hidden text-white">
+                    <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor" />
+                    </svg>
+                </div>
+            </div>
+
+            <section className="section">
+                <div className="container">
+                    <div className="row justify-content-center">
+                        <div className="col-lg-10">
+                            <div className="card border-0 shadow rounded overflow-hidden">
+                                <ul className="nav nav-pills nav-justified flex-column flex-sm-row rounded-0 shadow overflow-hidden bg-light mb-0" id="pills-tab" role="tablist">
+                                    <li className="nav-item">
+                                        <a
+                                            className="nav-link rounded-0 active"
+                                            id="clinic-booking"
+                                            data-bs-toggle="pill"
+                                            href="#pills-clinic"
+                                            role="tab"
+                                            aria-controls="pills-clinic"
+                                            aria-selected="false"
+                                        >
+                                            <div className="text-center pt-5 pb-4">
+                                                <h2 className="title fw-bold text-white">Bird Clinic Appointment</h2>
+                                                <p className="text-white">Book an appointment for your bird.</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div className="tab-content p-4" id="pills-tabContent">
+                                    <div className="tab-pane fade show active" id="pills-clinic" role="tabpanel" aria-labelledby="clinic-booking">
+                                        <form>
+                                            <div className="row">
+                                                <div className="col-md-6">
+                                                    <div className="mb-3">
+                                                        <label className="form-label">
+                                                            Customer First Name <span className="text-danger">*</span>
+                                                        </label>
+                                                        <input
+                                                            name="customerFirstName"
+                                                            id="customerFirstName"
+                                                            type="text"
+                                                            className="form-control"
+                                                            placeholder="Customer First Name:"
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <div className="col-md-6">
+                                                    <div className="mb-3">
+                                                        <label className="form-label">
+                                                            Customer Last Name <span className="text-danger">*</span>
+                                                        </label>
+                                                        <input
+                                                            name="customerLastName"
+                                                            id="customerLastName"
+                                                            type="text"
+                                                            className="form-control"
+                                                            placeholder="Customer Last Name:"
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <div className="col-md-6">
+                                                    <div className="mb-3">
+                                                        <label className="form-label">
+                                                            Bird Species <span className="text-danger">*</span>
+                                                        </label>
+                                                        <select className="form-control birdSpecies">
+                                                            <option value="parrot">Parrot</option>
+                                                            <option value="canary">Canary</option>
+                                                            <option value="budgerigar">Budgerigar</option>
+                                                            <option value="cockatiel">Cockatiel</option>
+                                                            <option value="lovebird">Lovebird</option>
+                                                            <option value="finch">Finch</option>
+                                                            <option value="cockatoo">Cockatoo</option>
+                                                            <option value="macaw">Macaw</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div className="col-md-6">
+                                                    <div className="mb-3">
+                                                        <label className="form-label">
+                                                            Preferred Time Slot <span className="text-danger">*</span>
+                                                        </label>
+                                                        <select className="form-control timeSlot">
+                                                            <option value="morning">Morning</option>
+                                                            <option value="afternoon">Afternoon</option>
+                                                            <option value="evening">Evening</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div className="col-md-6">
+                                                    <div className="mb-3">
+                                                        <label className="form-label">
+                                                            Preferred Doctor <span className="text-danger">*</span>
+                                                        </label>
+                                                        <select className="form-control doctor">
+                                                            <option value="Dr. Avian Anderson">Dr. Avian Anderson</option>
+                                                            <option value="Dr. Feather Foster">Dr. Feather Foster</option>
+                                                            <option value="Dr. Wing Wallace">Dr. Wing Wallace</option>
+                                                            <option value="Dr. Beak Beckett">Dr. Beak Beckett</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div className="col-md-6">
+                                                    <div className="mb-3">
+                                                        <label className="form-label">
+                                                            Customer Email <span className="text-danger">*</span>
+                                                        </label>
+                                                        <input
+                                                            name="customerEmail"
+                                                            id="customerEmail"
+                                                            type="email"
+                                                            className="form-control"
+                                                            placeholder="Customer Email:"
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <div className="col-md-6">
+                                                    <div className="mb-3">
+                                                        <label className="form-label">
+                                                            Customer Phone <span className="text-danger">*</span>
+                                                        </label>
+                                                        <input
+                                                            name="customerPhone"
+                                                            id="customerPhone"
+                                                            type="tel"
+                                                            className="form-control"
+                                                            placeholder="Customer Phone:"
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <div className="col-lg-12">
+                                                    <div className="d-grid">
+                                                        <button type="submit" className="btn btn-primary">
+                                                            Book Appointment
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </>
+    );
 }

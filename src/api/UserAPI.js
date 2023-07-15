@@ -60,8 +60,8 @@ export const createUser = async (userData) => {
 // GET user role by ID
 export const getUserRole = async (userId) => {
     try {
-        const response = await axios.get(`${API_URL}?userId=${userId}`);
-        const user = response.data[0];
+        const response = await axios.get(`${API_URL}/${userId}`);
+        const user = response.data;
         return user.role;
     } catch (error) {
         console.error(`Error retrieving role for user with ID ${userId}:`, error);
