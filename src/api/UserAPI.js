@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://648867740e2469c038fda6cc.mockapi.io/user';
+const API_URL = 'https://64b0cbc3062767bc48252f14.mockapi.io/user';
 
 
 export const checkAuthorize = async (userId) => {
