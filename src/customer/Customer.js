@@ -4,6 +4,7 @@ import Breadcrumb from '../components/Breadcrumb';
 import CustomerBirdList from './CustomerBirdList';
 import CustomerDashboard from './CustomerDashboard';
 import CustomerProfileSetting from './CustomerProfileSetting';
+import AddBird from './AddBird';
 
 export default function Customer() {
     const [user, setUser] = useState({});
@@ -83,7 +84,7 @@ export default function Customer() {
                             <Route element={<CustomerDashboard />} path="customer-dashboard" />
                             <Route element={<CustomerProfileSetting />} path="customer-profile-setting" />
                             <Route element={<CustomerBirdList />} path='customer-bird-list' />
-
+                            <Route element={<AddBird />} path='add-bird' />
                         </Routes>
                     </div>
                 </div>

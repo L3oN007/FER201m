@@ -15,6 +15,7 @@ import CustomerBirdList from './customer/CustomerBirdList';
 import CustomerDashboard from './customer/CustomerDashboard';
 import CustomerProfileSetting from './customer/CustomerProfileSetting';
 import DoctorDashboard from './doctor/DoctorDashboard';
+import AddBird from './customer/AddBird';
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
               <Route element={<CustomerDashboard />} path='customer-dashboard' />
               <Route element={<CustomerProfileSetting />} path='customer-profile-setting' />
               <Route element={<CustomerBirdList />} path='customer-bird-list' />
+              <Route element={<AddBird />} path='add-bird' />
+
+              
             </Route>
 
 
