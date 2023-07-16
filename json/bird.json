@@ -1,0 +1,187 @@
+[
+    {
+        "birdName": "Kiwi",
+        "avatar": "https://images6.fanpop.com/image/photos/40700000/Colourful-Bird-birds-40741713-1280-960.jpg",
+        "hatchDate": "2023-01-10",
+        "sex": true,
+        "weight": 0.1,
+        "microchip": "MNO456XYZ789",
+        "birdId": "3",
+        "userId": "108069864305309013486",
+        "birdBreed": "Cockatiel",
+        "user": {
+            "uploadPhoto": "path/to/photo1.jpg",
+            "firstName": "John",
+            "lastName": "Doe",
+            "dateOfBirth": "1990-05-15",
+            "gender": "Male",
+            "email": "johndoe@example.com",
+            "address": "123 Main Street",
+            "district": "Central",
+            "city": "Cityville",
+            "phone": "1234567892",
+            "userId": "108069864305309013486",
+            "role": "user"
+        },
+        "app": [
+            {
+                "appId": "3",
+                "appTime": "2:00 PM",
+                "dateTime": "2023-07-17T14:00:00",
+                "service": "Imaging",
+                "description": "Diagnostic imaging (X-ray, ultrasound, etc.).",
+                "userId": "108069864305309013486",
+                "birdId": "3",
+                "status": "checkout"
+            },
+            {
+                "appId": "10",
+                "appTime": "3:00 PM",
+                "dateTime": "2023-07-24T15:00:00",
+                "service": "Genetics",
+                "description": "Genetic testing and analysis.",
+                "userId": "108069864305309013486",
+                "birdId": "3",
+                "status": "canceled"
+            },
+            {
+                "dateTime": "2023-07-15T14:15",
+                "service": "surgery",
+                "description": "gdsad",
+                "status": "processing",
+                "appId": "12",
+                "birdId": "3",
+                "userId": "108069864305309013486"
+            }
+        ]
+    },
+    {
+        "birdName": "Pepper",
+        "avatar": "https://www.publicdomainpictures.net/pictures/60000/nahled/bird-1382262607iEg.jpg",
+        "hatchDate": "2022-06-25",
+        "sex": false,
+        "weight": 0.15,
+        "microchip": "JKL789PQR123",
+        "birdId": "4",
+        "userId": "108069864305309013486",
+        "birdBreed": "Budgerigar",
+        "user": {
+            "uploadPhoto": "path/to/photo1.jpg",
+            "firstName": "John",
+            "lastName": "Doe",
+            "dateOfBirth": "1990-05-15",
+            "gender": "Male",
+            "email": "johndoe@example.com",
+            "address": "123 Main Street",
+            "district": "Central",
+            "city": "Cityville",
+            "phone": "1234567892",
+            "userId": "108069864305309013486",
+            "role": "user"
+        },
+        "app": [
+            {
+                "appId": "4",
+                "appTime": "9:30 AM",
+                "dateTime": "2023-07-18T09:30:00",
+                "service": "Nutrition",
+                "description": "Consultation regarding bird's diet and nutrition.",
+                "userId": "108069864305309013486",
+                "birdId": "4",
+                "status": "complete"
+            }
+        ]
+    },
+    {
+        "birdName": "Sunny",
+        "avatar": "https://sp-ao.shortpixel.ai/client/q_glossy,ret_img/https://chilternchatter.com/wp-content/uploads/2018/01/RED-Bird.jpg",
+        "hatchDate": "2023-03-12",
+        "sex": true,
+        "weight": 0.12,
+        "microchip": "DEF456GHI789",
+        "birdId": "5",
+        "userId": "108069864305309013486",
+        "birdBreed": "Canary",
+        "user": {
+            "uploadPhoto": "path/to/photo1.jpg",
+            "firstName": "John",
+            "lastName": "Doe",
+            "dateOfBirth": "1990-05-15",
+            "gender": "Male",
+            "email": "johndoe@example.com",
+            "address": "123 Main Street",
+            "district": "Central",
+            "city": "Cityville",
+            "phone": "1234567892",
+            "userId": "108069864305309013486",
+            "role": "user"
+        },
+        "app": [
+            {
+                "appId": "5",
+                "appTime": "1:00 PM",
+                "dateTime": "2023-07-19T13:00:00",
+                "service": "Genetics",
+                "description": "Genetic testing and analysis.",
+                "userId": "108069864305309013486",
+                "birdId": "5",
+                "status": "canceled"
+            },
+            {
+                "dateTime": "2023-07-15T13:46",
+                "service": "surgery",
+                "description": "rrrrrrr",
+                "status": "processing",
+                "appId": "11",
+                "birdId": "5",
+                "userId": "108069864305309013486"
+            },
+            {
+                "dateTime": "2023-07-15T14:28",
+                "service": "genetics",
+                "description": "dsa",
+                "status": "processing",
+                "appId": "13",
+                "birdId": "5",
+                "userId": "108069864305309013486"
+            }
+        ]
+    },
+    {
+        "birdName": "Rio",
+        "avatar": "https://images.pexels.com/photos/2629372/pexels-photo-2629372.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "hatchDate": "2023-04-20",
+        "sex": true,
+        "weight": 0.22,
+        "microchip": "GHI789JKL123",
+        "birdId": "7",
+        "userId": "108069864305309013486",
+        "birdBreed": "Parrot",
+        "user": {
+            "uploadPhoto": "path/to/photo1.jpg",
+            "firstName": "John",
+            "lastName": "Doe",
+            "dateOfBirth": "1990-05-15",
+            "gender": "Male",
+            "email": "johndoe@example.com",
+            "address": "123 Main Street",
+            "district": "Central",
+            "city": "Cityville",
+            "phone": "1234567892",
+            "userId": "108069864305309013486",
+            "role": "user"
+        },
+        "app": [
+            {
+                "appId": "7",
+                "appTime": "11:00 AM",
+                "dateTime": "2023-07-21T11:00:00",
+                "service": "Surgery",
+                "description": "Scheduled surgical procedure.",
+                "userId": "108069864305309013486",
+                "birdId": "7",
+                "status": "checkin"
+            }
+        ]
+    }
+]
