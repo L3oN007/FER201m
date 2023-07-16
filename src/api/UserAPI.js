@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://648867740e2469c038fda6cc.mockapi.io/user';
+const API_URL = 'https://64b0cbc3062767bc48252f14.mockapi.io/user';
 
 
 export const checkAuthorize = async (userId) => {
@@ -76,6 +76,18 @@ export const createUser = async (userData) => {
         return response.data;
     } catch (error) {
         console.error('Error creating user:', error);
+        throw error;
+    }
+};
+
+// GET user role by ID
+export const getUserRole = async (userId) => {
+    try {
+        const response = await axios.get(`${API_URL}/${userId}`);
+        const user = response.data;
+        return user.role;
+    } catch (error) {
+        console.error(`Error retrieving role for user with ID ${userId}:`, error);
         throw error;
     }
 };
