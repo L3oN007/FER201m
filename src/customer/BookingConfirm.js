@@ -2,7 +2,7 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { useEffect, useState } from 'react';
 import * as Yup from 'yup';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 export default function BookingConfirm() {
@@ -14,7 +14,7 @@ export default function BookingConfirm() {
     const [birds, setBirds] = useState([]);
     const [LoginUser, setLoginUser] = useState({});
     const [user, setUser] = useState([]);
-    const history = useHistory();
+    // const history = useNavigate();
 
     useEffect(() => {
 
