@@ -5,7 +5,7 @@ import CustomerBirdList from './CustomerBirdList';
 import CustomerDashboard from './CustomerDashboard';
 import CustomerProfileSetting from './CustomerProfileSetting';
 import AddBird from './AddBird';
-
+import { getUserById } from '../api/UserAPI';
 export default function Customer() {
     const [user, setUser] = useState({});
 
@@ -13,9 +13,15 @@ export default function Customer() {
         const storedLoginData = localStorage.getItem('loginData');
         if (storedLoginData) {
             const loginData = JSON.parse(storedLoginData);
-            setUser(loginData.user);
+            getUserById(loginData.user.sub)
+                .then(userdata => {
+                    console.log("userdata: ", userdata);
+                    setUser(userdata);
+                })
+                .catch(error => console.error(error));
         }
     }, []);
+    
 
     return (
         <>
@@ -32,16 +38,16 @@ export default function Customer() {
                                 <div className="widget-profile pro-widget-content">
                                     <div className="profile-info-widget">
                                         <a href="#" className="booking-doc-img">
-                                            <img src={user.picture} alt="User Image" />
+                                            <img src={user.uploadPhoto} alt="User Image" />
                                         </a>
                                         <div className="profile-det-info">
-                                            <h3>{user.name}</h3>
+                                            <h3>{user.lastName} {user.firstName}</h3>
                                             <div className="patient-details">
                                                 <h5>
                                                     <i className="fas fa fa-envelope" /> {user.email}
                                                 </h5>
                                                 <h5 className="mb-0">
-                                                    <i className="fas fa-map-marker-alt" /> Thanh Xuan, Hanoi
+                                                    <i className="fas fa-map-marker-alt" /> {user.district}, {user.city}
                                                 </h5>
                                             </div>
                                         </div>

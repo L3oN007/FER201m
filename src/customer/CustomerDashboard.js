@@ -114,7 +114,7 @@ export default function CustomerDashboard() {
                                                                             className="btn btn-sm bg-danger-light"
                                                                             onClick={() => cancelAppointment(appt.appId,bird.birdId)}
                                                                         >
-                                                                            <i className="far fa-times" /> Cancel
+                                                                            <i className="fa fa-times" /> Cancel
                                                                         </button>
                                                                     </div>
                                                                 )}

@@ -94,7 +94,7 @@ export default function Navigation() {
                 }
             };
         }
-    }, [user]);
+    }, []);
 
     return (
         <header className="header">

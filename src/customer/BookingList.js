@@ -61,26 +61,26 @@ export default function BookingList() {
             <div className="col-lg-4">
               <div className="section-header">
                 <h2>Book Our Doctor</h2>
-                <p>Lorem Ipsum is simply dummy text</p>
+                <p>Certified Avian Practice</p>
               </div>
               <div className="about-content">
                 <p>
-                  It is a long established fact that a reader will be distracted by
-                  the readable content of a page when looking at its layout. The point
-                  of using Lorem Ipsum.
+                  BirdLovers Clinic, is home to Dr. Kiet, a Certified Avian Specialist offering
+                  an exceptional level of veterinary care to all types of birds. We work with pet
+                  owners, bird breeders, zoos and other facilities treating birds, from exotic
+                  toucans and parrots, to cockatoos, parakeets, and more.
                 </p>
                 <p>
-                  web page editors now use Lorem Ipsum as their default model text,
-                  and a search for 'lorem ipsum' will uncover many web sites still in
-                  their infancy. Various versions have evolved over the years,
-                  sometimes
+                  We feature a state-of-the-art surgical center, ICU, specialized avian radiography,
+                  anesthesia, endoscopy, boarding, in-house laboratory, and more. Schedule your appointment today.
                 </p>
                 <Link to='/booking-confirm' className='mr-2'>Book All</Link>
-                <a href="javascript:;">Read More..</a>
+                <Link to='/blog-list'>Read More..</Link>
+
               </div>
             </div>
             <div className="col-lg-8">
-              <div className="row filter">
+              {/* <div className="row filter">
                 <div className="form-group col-lg-6">
                   <label htmlFor="specialty-selector">Specialty</label>
                   <select className="form-control" id="specialty-selector">
@@ -92,7 +92,7 @@ export default function BookingList() {
                     <option value="genetics">Genetics</option>
                   </select>
                 </div>
-              </div>
+              </div> */}
               <div className="doctor-slider slider" id="doctors-container">
                 <Slider {...settings} ref={sliderRef}>
                   {/* Doctor Widget */}
@@ -149,7 +149,7 @@ export default function BookingList() {
                           </a>
                         </div>
                         <div className="col-6">
-                          <Link to='booking-confirm' className="btn book-btn">
+                          <Link to='/booking-confirm' className="btn book-btn">
                             Book Now
                           </Link>
                         </div>
@@ -208,7 +208,7 @@ export default function BookingList() {
                           </a>
                         </div>
                         <div className="col-6">
-                        <Link to='booking-confirm' className="btn book-btn">
+                          <Link to='/booking-confirm' className="btn book-btn">
                             Book Now
                           </Link>
                         </div>
@@ -267,7 +267,7 @@ export default function BookingList() {
                           </a>
                         </div>
                         <div className="col-6">
-                        <Link to='booking-confirm' className="btn book-btn">
+                          <Link to='/booking-confirm' className="btn book-btn">
                             Book Now
                           </Link>
                         </div>
@@ -326,7 +326,7 @@ export default function BookingList() {
                           </a>
                         </div>
                         <div className="col-6">
-                        <Link to='booking-confirm' className="btn book-btn">
+                          <Link to='/booking-confirm' className="btn book-btn">
                             Book Now
                           </Link>
                         </div>
@@ -388,7 +388,7 @@ export default function BookingList() {
                           </a>
                         </div>
                         <div className="col-6">
-                        <Link to='booking-confirm' className="btn book-btn">
+                          <Link to='/booking-confirm' className="btn book-btn">
                             Book Now
                           </Link>
                         </div>
@@ -447,7 +447,7 @@ export default function BookingList() {
                           </a>
                         </div>
                         <div className="col-6">
-                        <Link to='booking-confirm' className="btn book-btn">
+                          <Link to='/booking-confirm' className="btn book-btn">
                             Book Now
                           </Link>
                         </div>
@@ -506,7 +506,7 @@ export default function BookingList() {
                           </a>
                         </div>
                         <div className="col-6">
-                        <Link to='booking-confirm' className="btn book-btn">
+                          <Link to='/booking-confirm' className="btn book-btn">
                             Book Now
                           </Link>
                         </div>
@@ -565,7 +565,7 @@ export default function BookingList() {
                           </a>
                         </div>
                         <div className="col-6">
-                        <Link to='booking-confirm' className="btn book-btn">
+                          <Link to='/booking-confirm' className="btn book-btn">
                             Book Now
                           </Link>
                         </div>

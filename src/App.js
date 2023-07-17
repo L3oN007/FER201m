@@ -16,6 +16,8 @@ import CustomerDashboard from './customer/CustomerDashboard';
 import CustomerProfileSetting from './customer/CustomerProfileSetting';
 import DoctorDashboard from './doctor/DoctorDashboard';
 import AddBird from './customer/AddBird';
+import BlogList from './blog/BlogList';
+import BlogDetail from './blog/BlogDetail';
 
 function App() {
   return (
@@ -30,17 +32,16 @@ function App() {
               <Route element={<CustomerProfileSetting />} path='customer-profile-setting' />
               <Route element={<CustomerBirdList />} path='customer-bird-list' />
               <Route element={<AddBird />} path='add-bird' />
-
-              
             </Route>
-
-
             <Route element={<BookingList />} path='booking-list' />
             <Route element={<Booking />} path='booking' />
             <Route element={<BookingConfirm />} path='booking-confirm' />
             <Route element={<BookingSuccessfully />} path='booking-successfully' />
             <Route element={<DoctorDashboard />} path='doctor-dashboard' />
           </Route>
+          <Route element={<BlogList />} path='blog-list' />
+          <Route element={<BlogDetail />} path='blog-detail/:id' />
+
           <Route element={<Error />} path='*' />
         </Routes>
         <Footer />

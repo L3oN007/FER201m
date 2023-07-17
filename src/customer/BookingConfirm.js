@@ -60,6 +60,7 @@ export default function BookingConfirm() {
                 // Handle the API response
                 console.log('API response:', data);
                 // Redirect to the success page
+                alert(`Booking successfully at ${data.dateTime.split('T')[0]} ${data.dateTime.split('T')[1]}`)
                 // history.push('/booking-successfully');
             })
             .catch(error => {
@@ -204,6 +205,7 @@ export default function BookingConfirm() {
                                                             <option value="imaging">Imaging</option>
                                                             <option value="nutrition">Nutrition</option>
                                                             <option value="genetics">Genetics</option>
+                                                            <option value="grooming">Grooming</option>
                                                         </Field>
                                                         <ErrorMessage
                                                             name="service"
@@ -244,9 +246,9 @@ export default function BookingConfirm() {
                                             </div>
 
                                             <div className="submit-section mt-4">
-                                                <Link to="/booking-successfully" type="submit" className="btn btn-primary submit-btn">
+                                                <button to="/booking-successfully" type="submit" className="btn btn-primary submit-btn">
                                                     Confirm and submit
-                                                </Link>
+                                                </button>
                                             </div>
                                         </Form>
                                     </Formik>
@@ -290,14 +292,14 @@ export default function BookingConfirm() {
                                     {/* Booking Doctor Info */}
                                     <div className="booking-summary">
                                         <div className="booking-item-wrap">
-                                            <ul className="booking-date">
+                                            {/* <ul className="booking-date">
                                                 <li>
                                                     Date <span>16 Jun 2023</span>
                                                 </li>
                                                 <li>
                                                     Time <span>10:00 AM</span>
                                                 </li>
-                                            </ul>
+                                            </ul> */}
                                             <ul className="booking-fee">
                                                 {/* <li>Consulting Fee <span>$100</span></li> */}
                                                 <li>
