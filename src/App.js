@@ -1,5 +1,5 @@
 import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import Admin from './admin/Admin';
+// import Admin from './admin/Admin';
 import './assets/css/bootstrap.min.css';
 import './assets/css/style.css';
 import Error from './components/Error';
@@ -10,7 +10,16 @@ import Customer from './customer/Customer';
 import CustomerDashboard from './customer/CustomerDashboard';
 import Staff from './staff/Staff';
 import StaffDashboard from './staff/StaffDashboard';
-
+import CustomerProfileSetting from './customer/CustomerProfileSetting';
+import CustomerBirdList from './customer/CustomerBirdList';
+import AddBird from './customer/AddBird';
+import BookingList from './customer/BookingList';
+import Booking from './customer/Booking';
+import BookingConfirm from './customer/BookingConfirm';
+import BookingSuccessfully from './customer/BookingSuccessfully';
+import DoctorDashboard from './doctor/DoctorDashboard';
+import BlogList from './blog/BlogList';
+import BlogDetail from './blog/BlogDetail';
 function App() {
   return (
     <div className='main-wrapper'>
@@ -35,14 +44,22 @@ function App() {
             element={<AuthorizedRoute component={Customer} allowedRoles={["customer", "admin"]} />}
           >
             <Route element={<CustomerDashboard />} path='customer-dashboard' />
+            <Route element={<CustomerProfileSetting />} path='customer-profile-setting' />
+            <Route element={<CustomerBirdList />} path='customer-bird-list' />
+            <Route element={<AddBird />} path='add-bird' />
+            <Route element={<BookingList />} path='booking-list' />
+            <Route element={<Booking />} path='booking' />
+            <Route element={<BookingConfirm />} path='booking-confirm' />
           </Route>
 
+          <Route element={<BlogList />} path='blog-list' />
+          <Route element={<BlogDetail />} path='blog-detail/:id' />
 
 
-          <Route
+          {/* <Route
             path="/admin"
             element={<AuthorizedRoute component={Admin} allowedRoles={["admin"]} />}
-          />
+          /> */}
           <Route path='*' element={<Error />} />
         </Routes>
         <Footer />

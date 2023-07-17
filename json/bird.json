@@ -1,36 +1,36 @@
-[
-    {
-        "birdName": "Kiwi",
-        "avatar": "https://images6.fanpop.com/image/photos/40700000/Colourful-Bird-birds-40741713-1280-960.jpg",
-        "hatchDate": "2023-01-10",
-        "sex": true,
-        "weight": 0.1,
-        "microchip": "MNO456XYZ789",
-        "birdId": "3",
-        "userId": "108069864305309013486",
-        "birdBreed": "Cockatiel"
-    },
-    {
-        "birdName": "Sunny",
-        "avatar": "https://sp-ao.shortpixel.ai/client/q_glossy,ret_img/https://chilternchatter.com/wp-content/uploads/2018/01/RED-Bird.jpg",
-        "hatchDate": "2023-03-12",
-        "sex": true,
-        "weight": 0.12,
-        "microchip": "DEF456GHI789",
-        "birdId": "5",
-        "userId": "108069864305309013486",
-        "birdBreed": "Canary"
-        
-    },
-    {
-        "birdName": "Rio",
-        "avatar": "https://images.pexels.com/photos/2629372/pexels-photo-2629372.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "hatchDate": "2023-04-20",
-        "sex": true,
-        "weight": 0.22,
-        "microchip": "GHI789JKL123",
-        "birdId": "7",
-        "userId": "108069864305309013486",
-        "birdBreed": "Parrot"
-    }
-]
+    [
+        {
+            "birdName": "Kiwi",
+            "avatar": "https://images6.fanpop.com/image/photos/40700000/Colourful-Bird-birds-40741713-1280-960.jpg",
+            "hatchDate": "2023-01-10",
+            "sex": true,
+            "weight": 0.1,
+            "microchip": "MNO456XYZ789",
+            "birdId": "3",
+            "userId": "108069864305309013486",
+            "birdBreed": "Cockatiel"
+        },
+        {
+            "birdName": "Sunny",
+            "avatar": "https://sp-ao.shortpixel.ai/client/q_glossy,ret_img/https://chilternchatter.com/wp-content/uploads/2018/01/RED-Bird.jpg",
+            "hatchDate": "2023-03-12",
+            "sex": true,
+            "weight": 0.12,
+            "microchip": "DEF456GHI789",
+            "birdId": "5",
+            "userId": "108069864305309013486",
+            "birdBreed": "Canary"
+            
+        },
+        {
+            "birdName": "Rio",
+            "avatar": "https://images.pexels.com/photos/2629372/pexels-photo-2629372.jpeg?auto=compress&cs=tinysrgb&w=400",
+            "hatchDate": "2023-04-20",
+            "sex": true,
+            "weight": 0.22,
+            "microchip": "GHI789JKL123",
+            "birdId": "7",
+            "userId": "108069864305309013486",
+            "birdBreed": "Parrot"
+        }
+    ]

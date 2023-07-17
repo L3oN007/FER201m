@@ -74,12 +74,7 @@ export default function Customer() {
                                                     <span>Profile Settings</span>
                                                 </NavLink>
                                             </li>
-                                            <li>
-                                                <a href="index.html">
-                                                    <i className="fas fa-sign-out-alt" />
-                                                    <span>Logout</span>
-                                                </a>
-                                            </li>
+                                            
                                         </ul>
                                     </nav>
                                 </div>
