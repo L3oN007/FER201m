@@ -58,6 +58,45 @@ export default function StaffDashboard() {
             });
 
             setAppointments(updatedAppointments);
+
+            try {
+                const appUpdateResponse = await fetch(`https://64b0cbc3062767bc48252f14.mockapi.io/app/${appId}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ status: newStatus }),
+                });
+
+                if (appUpdateResponse.ok) {
+                    console.log(`Status updated for appointment ${appId} to ${newStatus}`);
+                } else {
+                    console.log(`Failed to update status for appointment ${appId}`);
+                }
+
+                const appointment = updatedAppointments.find((appointment) => appointment.appId === appId);
+                if (appointment) {
+                    const { userId, birdId } = appointment;
+                    const birdAppUpdateResponse = await fetch(
+                        `https://64b0cbc3062767bc48252f14.mockapi.io/user/${userId}/bird/${birdId}/app/${appId}`,
+                        {
+                            method: 'PUT',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({ status: newStatus }),
+                        }
+                    );
+
+                    if (birdAppUpdateResponse.ok) {
+                        console.log(`Status updated for bird ${birdId}, appointment ${appId} to ${newStatus}`);
+                    } else {
+                        console.log(`Failed to update status for bird ${birdId}, appointment ${appId}`);
+                    }
+                }
+            } catch (error) {
+                console.log(error);
+            }
         }
     };
 
@@ -109,6 +148,7 @@ export default function StaffDashboard() {
                                                                     <option value="checkin">Checkin</option>
                                                                     <option value="checkout">Checkout</option>
                                                                     <option value="complete">Complete</option>
+                                                                    <option value="canceled">Canceled</option>
                                                                 </select>
                                                             </td>
                                                         </tr>
