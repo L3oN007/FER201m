@@ -19,8 +19,8 @@ export default class Footer extends Component {
 
                                     <div className="footer-about-content">
                                         <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                            do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                            BirdLove Veterinary Clinic | Trusted Pet Hospital in HCMC Providing the Best Veterinary
+                                            Services and Top-notch Veterinary Team, a Reliable Place for Pet Check-ups and Treatment.
                                         </p>
                                         <div className="social-icon">
                                             <ul>
@@ -56,74 +56,10 @@ export default class Footer extends Component {
                                 {/* /Footer Widget */}
                             </div>
                             <div className="col-lg-3 col-md-6">
-                                {/* Footer Widget */}
-                                <div className="footer-widget footer-menu">
-                                    <h2 className="footer-title">For Patients</h2>
-                                    <ul>
-                                        <li>
-                                            <a href="search.html">
-                                                <i className="fas fa-angle-double-right" /> Search for
-                                                Doctors
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="login.html">
-                                                <i className="fas fa-angle-double-right" /> Login
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="register.html">
-                                                <i className="fas fa-angle-double-right" /> Register
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="booking.html">
-                                                <i className="fas fa-angle-double-right" /> Booking
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="patient-dashboard.html">
-                                                <i className="fas fa-angle-double-right" /> Patient
-                                                Dashboard
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                {/* /Footer Widget */}
+
                             </div>
                             <div className="col-lg-3 col-md-6">
-                                {/* Footer Widget */}
-                                <div className="footer-widget footer-menu">
-                                    <h2 className="footer-title">For Doctors</h2>
-                                    <ul>
-                                        <li>
-                                            <a href="appointments.html">
-                                                <i className="fas fa-angle-double-right" /> Appointments
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="chat.html">
-                                                <i className="fas fa-angle-double-right" /> Chat
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="login.html">
-                                                <i className="fas fa-angle-double-right" /> Login
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="doctor-register.html">
-                                                <i className="fas fa-angle-double-right" /> Register
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="doctor-dashboard.html">
-                                                <i className="fas fa-angle-double-right" /> Doctor Dashboard
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                {/* /Footer Widget */}
+
                             </div>
                             <div className="col-lg-3 col-md-6">
                                 {/* Footer Widget */}
@@ -135,18 +71,18 @@ export default class Footer extends Component {
                                                 <i className="fas fa-map-marker-alt" />
                                             </span>
                                             <p>
-                                                3556 Beech Street, San Francisco,
-                                                <br />
-                                                California, CA 94108
+                                                76 Le Lai Street, Ben Thanh Ward<br />
+                                                District 1, Ho Chi Minh City<br />
+                                                Vietnam
                                             </p>
                                         </div>
                                         <p>
                                             <i className="fas fa-phone-alt" />
-                                            +1 315 369 5943
+                                            +84 093 388 8555
                                         </p>
                                         <p className="mb-0">
                                             <i className="fas fa-envelope" />
-                                            doccure@example.com
+                                            birdloverclinic@gmail.com
                                         </p>
                                     </div>
                                 </div>
@@ -164,9 +100,7 @@ export default class Footer extends Component {
                             <div className="row">
                                 <div className="col-md-6 col-lg-6">
                                     <div className="copyright-text">
-                                        <p className="mb-0">
-                                            <a href="templateshub.net">Templates Hub</a>
-                                        </p>
+
                                     </div>
                                 </div>
                                 <div className="col-md-6 col-lg-6">
