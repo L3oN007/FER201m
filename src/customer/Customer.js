@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink, Route, Routes } from 'react-router-dom';
+import { getUserById } from '../api/UserAPI';
 import Breadcrumb from '../components/Breadcrumb';
+import AddBird from './AddBird';
 import CustomerBirdList from './CustomerBirdList';
 import CustomerDashboard from './CustomerDashboard';
 import CustomerProfileSetting from './CustomerProfileSetting';
-import AddBird from './AddBird';
-import { getUserById } from '../api/UserAPI';
 export default function Customer() {
     const [user, setUser] = useState({});
 
@@ -13,15 +13,16 @@ export default function Customer() {
         const storedLoginData = localStorage.getItem('loginData');
         if (storedLoginData) {
             const loginData = JSON.parse(storedLoginData);
+            setUser(loginData.user); // Set initial user data from localStorage
             getUserById(loginData.user.sub)
                 .then(userdata => {
                     console.log("userdata: ", userdata);
-                    setUser(userdata);
+                    setUser(prevUser => ({ ...prevUser, ...userdata })); // Update user state with additional data
                 })
                 .catch(error => console.error(error));
         }
     }, []);
-    
+
 
     return (
         <>
@@ -38,7 +39,7 @@ export default function Customer() {
                                 <div className="widget-profile pro-widget-content">
                                     <div className="profile-info-widget">
                                         <a href="#" className="booking-doc-img">
-                                            <img src={user.uploadPhoto} alt="User Image" />
+                                            <img src={user.picture} alt="User Image" />
                                         </a>
                                         <div className="profile-det-info">
                                             <h3>{user.lastName} {user.firstName}</h3>
@@ -74,7 +75,7 @@ export default function Customer() {
                                                     <span>Profile Settings</span>
                                                 </NavLink>
                                             </li>
-                                            
+
                                         </ul>
                                     </nav>
                                 </div>

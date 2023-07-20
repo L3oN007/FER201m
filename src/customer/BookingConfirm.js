@@ -2,7 +2,6 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { useEffect, useState } from 'react';
 import * as Yup from 'yup';
-import { Link, useNavigate } from 'react-router-dom';
 
 
 export default function BookingConfirm() {
@@ -183,6 +182,9 @@ export default function BookingConfirm() {
                                                                 component="div"
                                                                 className="error-message"
                                                             />
+                                                            <button className="btn btn-primary submit-btn">
+                                                                Add bird
+                                                            </button>
                                                         </div>
                                                     </div>
                                                 </div>

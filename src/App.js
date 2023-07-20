@@ -2,24 +2,23 @@ import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-d
 // import Admin from './admin/Admin';
 import './assets/css/bootstrap.min.css';
 import './assets/css/style.css';
+import BlogDetail from './blog/BlogDetail';
+import BlogList from './blog/BlogList';
 import Error from './components/Error';
 import Footer from './components/Footer';
 import Index from './components/Index';
 import Navigation from './components/Navigation';
-import Customer from './customer/Customer';
-import CustomerDashboard from './customer/CustomerDashboard';
-import Staff from './staff/Staff';
-import StaffDashboard from './staff/StaffDashboard';
-import CustomerProfileSetting from './customer/CustomerProfileSetting';
-import CustomerBirdList from './customer/CustomerBirdList';
+import PrivateRoutes from './components/PrivateRoute';
 import AddBird from './customer/AddBird';
-import BookingList from './customer/BookingList';
 import Booking from './customer/Booking';
 import BookingConfirm from './customer/BookingConfirm';
-import BookingSuccessfully from './customer/BookingSuccessfully';
-import DoctorDashboard from './doctor/DoctorDashboard';
-import BlogList from './blog/BlogList';
-import BlogDetail from './blog/BlogDetail';
+import BookingList from './customer/BookingList';
+import Customer from './customer/Customer';
+import CustomerBirdList from './customer/CustomerBirdList';
+import CustomerDashboard from './customer/CustomerDashboard';
+import CustomerProfileSetting from './customer/CustomerProfileSetting';
+import Staff from './staff/Staff';
+import StaffDashboard from './staff/StaffDashboard';
 function App() {
   return (
     <div className='main-wrapper'>
@@ -47,13 +46,19 @@ function App() {
             <Route element={<CustomerProfileSetting />} path='customer-profile-setting' />
             <Route element={<CustomerBirdList />} path='customer-bird-list' />
             <Route element={<AddBird />} path='add-bird' />
+
+          </Route>
+
+          {/* blog */}
+          <Route element={<BlogList />} path='blog-list' />
+          <Route element={<BlogDetail />} path='blog-detail/:id' />
+
+          {/* Booking */}
+          <Route element={<PrivateRoutes />}>
             <Route element={<BookingList />} path='booking-list' />
             <Route element={<Booking />} path='booking' />
             <Route element={<BookingConfirm />} path='booking-confirm' />
           </Route>
-
-          <Route element={<BlogList />} path='blog-list' />
-          <Route element={<BlogDetail />} path='blog-detail/:id' />
 
 
           {/* <Route
